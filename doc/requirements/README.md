@@ -28,7 +28,7 @@ Once a visitor is authorized by OCCC staff, they can login to the Kipa site usin
 
 *RequestVisit:* This state is associated with visitors who do not have a scheduled visit and are not blocked. When they login, Kipa shows a page which allows them to request a visit. If they have already requested a visit but it has not yet been scheduled by OCCC staff, then this page indicates what they have requested and allows them to change it.
 
-*ScheduledVisit:* This state is associated with visitors for whom OCCC staff have approved an upcoming visit. When they login, Kipa shows a page with the date and time of the upcoming visit and reminders about dress code and documentation. The visitor can cancel the scheduled visit from this page if desired.
+*PendingVisit:* This state is associated with visitors for whom OCCC staff have approved an upcoming visit. When they login, Kipa shows a page with the date and time of the upcoming visit and reminders about dress code and documentation. The visitor can cancel the scheduled visit from this page if desired.
 
 *Blocked:* A visitor enters this state if their documentation requires updates, or if they have been barred from visitation for some other reason. When they login, Kipa displays information about why they are currently blocked and what they have to do to become eligible to request visits again.
   
@@ -40,6 +40,9 @@ The following pages document a series of "use cases", which are end-to-end inter
   * [(Staff) Authorize visitor](usecase-staff-authorize-visitor.md)
   * [(Visitor) Request visit](usecase-visitor-request-visit.md)
   * [(Staff) Schedule visit](usecase-staff-schedule-visit.md)
+  * [(Visitor) Pending visit](usecase-visitor-pending-visit.md)
+  * [(Staff) Block visitor](usecase-staff-block-visitor.md)
+  * [(Visitor) Blocked status](usecase-visitor-blocked-status.md)
 
 
 ## Resources
