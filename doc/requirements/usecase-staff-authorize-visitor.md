@@ -1,6 +1,6 @@
 # Use Case: Staff: Authorize visitor
 
-When a visitor has submitted documentation to become authorized and it has been successfully processed, an OCCC staff person logs into Kipa using their administrative password.
+When a visitor has submitted documentation to become authorized and it has been successfully processed, an OCCC staff person logs into Kipa using their administrative password to tell the system about the newly authorized visitor.
  
 The home page provides menubar with a list of actions. One is "Authorize new visitor". They select this item.
 
@@ -10,7 +10,7 @@ In the prototype version of the system, the provider (Verizon, ATT) must also be
 
 This page also requests the visitor's first and last name, the detainee or detainees they want to visit and any internal ID numbers required.
 
-At the bottom, there is a button to submit.  If the form can be successfully submitted, then the page will display a tet field with a default text message to be sent to the visitor indicating that they are authorized to use Kipa. The OCCC staff can review and edit this text message as desired.  
+At the bottom, there is a button to submit.  If the form can be successfully submitted, then the page will display a text field with a default text message to be sent to the visitor indicating that they are authorized to use Kipa, the site URL, and their PIN number. The OCCC staff can review and edit this text message as desired.  
  
 They can press a button at the bottom labeled "Send text" to send the contents of the text field to the visitor as a text message. 
 
