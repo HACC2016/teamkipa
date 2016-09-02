@@ -34,7 +34,9 @@ Once a visitor is authorized by OCCC staff, they can login to the Kipa site usin
   
 ## Use Cases
 
-The following pages document a series of "use cases", which are end-to-end interactions with Kipa that illustrate the most common scenarios of use.  Kipa has two interfaces: one used by visitors, and one used by OCCC staff. 
+The following pages document a series of "use cases", which are end-to-end interactions with Kipa that illustrate the most common scenarios of use.  Kipa has two interfaces: one used by visitors, and one used by OCCC staff, so each use case is specific to one of these two roles. 
+ 
+  * [Obtain initial authorization](usecase-obtain-initial-authorization.md). 
 
 
 ## Resources
