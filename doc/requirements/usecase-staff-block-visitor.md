@@ -1,4 +1,4 @@
-Use Case: Staff: Block Visitor
+# Use Case: Staff: Block Visitor
 
 If a visitor violates the rules, or if their documentation requires updates, or for any other reason they cannot visit, then OCCC staff can login to the system and select the menu item "Block visitor".
 
