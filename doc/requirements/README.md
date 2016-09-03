@@ -22,9 +22,9 @@ Kipa is a web application with two user interfaces: one for visitors and one for
 
 Kipa classifies a visitor as being in exactly one of the following "states".  Kipa's web interface displays different information to a visitor and enables different actions depending upon their state.
 
-*NeverAuthorized:* A visitor is in this state if they have not yet turned in their documentation and had it approved by OCCC staff. A NeverAuthorized visitor cannot login to the Kipa site, but can click a button on the home page to obtain instructions on how to submit documentation to become authorized.
+*NeverAuthorized:* A visitor is in this state if they have not yet turned in their documentation and had it approved by OCCC staff. A NeverAuthorized visitor cannot login to the Kipa site, but can click a button labeled "Learn about visitation" on the home page to obtain instructions on how to submit documentation to become authorized.
 
-Once a visitor is authorized by OCCC staff, they can login to the Kipa site using their 10 digit phone number as a username and a 4 digit PIN (password) provided to them via text message or over the OCCC phone line. The following states apply to visitors who have submitted documentation and had it approved.
+Once a visitor is authorized by OCCC staff, they can login to the Kipa site using their 10 digit phone number as a username and a 4 digit PIN (password) provided to them via text message or over the OCCC phone line. (Later versions of Kipa may offer alternative login approaches, but the initial version will require visitors to provide a 10 digit phone number accepting text messages in order to use Kipa.) The following states apply to visitors who have submitted documentation and had it approved.
 
 *RequestVisit:* This state is associated with visitors who do not have a scheduled visit and are not blocked. When they login, Kipa shows a page which allows them to request a visit. If they have already requested a visit but it has not yet been scheduled by OCCC staff, then this page indicates what they have requested and allows them to change it.
 
@@ -34,9 +34,10 @@ Once a visitor is authorized by OCCC staff, they can login to the Kipa site usin
   
 ## Use Cases
 
-The following pages document a series of "use cases", which are end-to-end interactions with Kipa that illustrate the most common scenarios of use.  Kipa has two interfaces: one used by visitors, and one used by OCCC staff, so each use case is specific to one of these two roles. 
+The following pages document a series of "use cases", which are end-to-end interactions with Kipa that illustrate the most common scenarios of use.  Kipa has two interfaces: one used by visitors, and one used by OCCC staff.  However, the overall workflow involves a third party (the detainee), and so some of the use cases specify the detainee even though they do not interact directly with the system.
  
-  * [(Visitor) Submit initial authorization](usecase-visitor-obtain-initial-authorization.md) 
+  * [(Detainee) Submit visitor list](usecase-detainee-submit-visitor-list.md)
+  * [(Visitor) Obtain initial authorization](usecase-visitor-obtain-initial-authorization.md) 
   * [(Staff) Authorize visitor](usecase-staff-authorize-visitor.md)
   * [(Visitor) Request visit](usecase-visitor-request-visit.md)
   * [(Staff) Schedule visit](usecase-staff-schedule-visit.md)
