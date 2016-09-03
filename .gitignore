@@ -3,3 +3,4 @@
 # Ignore IntelliJ project files.
 *.iml
 .idea
+.DS_Store
