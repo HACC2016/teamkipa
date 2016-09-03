@@ -44,6 +44,7 @@ The following pages document a series of "use cases", which are end-to-end inter
   * [(Visitor) Pending visit](usecase-visitor-pending-visit.md)
   * [(Staff) Block visitor](usecase-staff-block-visitor.md)
   * [(Visitor) Blocked status](usecase-visitor-blocked-status.md)
+  * [(Detainee) Update visitor list](usecase-detainee-update-visitor-list.md)
 
 
 ## Resources
