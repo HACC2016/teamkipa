@@ -1,49 +1,37 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
-import { Tasks } from '../api/tasks.js';
-import './task.js';
+import { Registers } from '../api/registers.js';
+import { Logins } from '../api/logins.js';
+import { Dashboards } from '../api/dashboards.js';
+import './register.js';
+import './login.js';
+import './dashboard.js';
 import './body.html';
 
 Template.body.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
-  Meteor.subscribe('tasks');
+  Meteor.subscribe('registers');
 });
 
 
 Template.body.helpers({
-  tasks() {
-    const instance = Template.instance();
-    if (instance.state.get('hideCompleted')) {
-      // If hide completed is checked, filter tasks
-      return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
-    }
-    // Otherwise, return all the tasks.
-    return Tasks.find({}, { sort: { createdAt: -1 } });
-  },
-  incompleteCount() {
-    return Tasks.find({ checked: { $ne: true } }).count();
-  },
+
 });
 
 Template.body.events({
-  'submit .new-task'(event) {
+  'submit .new-user'(event) {
     // Prevent default browser form submit
     event.preventDefault();
 
     // Get value from form element
     const target = event.target;
-    const text = target.text.value;
+    const registerEmail = target.registerEmail.value;
 
-    // Insert a task into the collection
-    Meteor.call('tasks.insert', text);
+    // Insert a new user into the collection
+    Meteor.call('registers.insert', registerEmail);
 
     // Clear form
-    target.text.value = '';
-  },
-
-  'change .hide-completed input'(event, instance) {
-    instance.state.set('hideCompleted', event.target.checked);
-  },
-
+    target.registerEmail.value = '';
+  }
 });
