@@ -17,14 +17,14 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'registers.insert'(registerEmail) {
-    check(registerEmail, String);
+  'registers.insert'(registerPhone) {
+    check(registerPhone, String);
 
     Registers.insert({
       // firstName,
       // lastName,
-      // phoneNumber,
-      registerEmail,
+      registerPhone,
+      // registerEmail,
       createdAt: new Date()
     });
   }

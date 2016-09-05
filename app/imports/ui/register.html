@@ -1,20 +1,19 @@
 <template name="register">
   <div id="signup">
+    <h1>Sign Up for Free</h1>
     <form class="new-user">
-      <div class="top-row">
-        <div class="field-wrap">
-          <label>
-            Phone Number<span class="req">*</span>
-          </label>
-          <input type="tel" name="phoneNumber" required autocomplete="off" />
-        </div>
+      <div class="field-wrap">
+        <label>
+          Mobile<span class="req">*</span>
+        </label>
+        <input type="tel" name="registerPhone" required autocomplete="off" />
+      </div>
 
-        <div class="field-wrap">
-          <label>
-            Email Address<span class="req">*</span>
-          </label>
-          <input type="email" name="registerEmail" required autocomplete="off"/>
-        </div>
+      <div class="field-wrap">
+        <label>
+          Password<span class="req">*</span>
+        </label>
+        <input type="password" name="registerPassword" required autocomplete="off"/>
       </div>
 
       <button type="submit" class="button button-block">GET STARTED</button>
@@ -22,25 +21,3 @@
     </form>
   </div>
 </template>
-
-<!-- <div class="field-wrap">
-  <label>
-    First Name<span class="req">*</span>
-  </label>
-  <input type="text" name="firstName" required autocomplete="off" />
-</div>
-
-<div class="field-wrap">
-  <label>
-    Last Name<span class="req">*</span>
-  </label>
-  <input type="text" lastName="lastName" required autocomplete="off" />
-</div>
- -->
-
-<!-- <div class="field-wrap">
-  <label>
-    Password<span class="req">*</span>
-  </label>
-  <input type="password" name="registerPassword" required autocomplete="off"/>
-</div>

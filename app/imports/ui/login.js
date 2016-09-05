@@ -11,8 +11,8 @@ Template.login.helpers({
 Template.login.events({
   'submit .login-user': function(event){
     event.preventDefault();
-    var loginEmail = event.target.loginEmail.value;
+    var loginPhone = event.target.loginPhone.value;
     var loginPass = event.target.loginPassword.value;
-    Meteor.loginWithPassword(loginEmail, loginPass);
+    Meteor.loginWithPassword(loginPhone, loginPass);
   }
 });

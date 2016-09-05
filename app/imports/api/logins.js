@@ -17,8 +17,8 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'logins.insert'(loginUser) {
-    check(loginUser, String);
+  'logins.insert'(loginPhone) {
+    check(loginPhone, String);
 
     // Make sure the user is authorized
     if (! this.userId) {
@@ -26,18 +26,8 @@ Meteor.methods({
     }
 
     Logins.insert({
-      emailAddr,
+      loginPhone,
       createdAt: new Date()
     });
   }
 });
-
-// if (Meteor.isClient) {
-//   Session.set('connectaReady', false);
-//   Meteor.startup(function(){
-//    $.getScript('http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js', function(){
-//     // script has loaded
-//     Session.set('conectaReady', true);
-//    });
-//   });
-// }
