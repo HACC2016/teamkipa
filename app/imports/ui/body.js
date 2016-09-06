@@ -1,12 +1,15 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
+import { Signups } from '../api/signups.js';
 import { Registers } from '../api/registers.js';
 import { Logins } from '../api/logins.js';
 import { Dashboards } from '../api/dashboards.js';
-import './register.js';
-import './login.js';
-import './dashboard.js';
+import './views/signup.js';
+import './views/register.js';
+import './views/login.js';
+import './views/dashboard.js';
+import './layouts/MainLayout.html';
 import './body.html';
 
 Template.body.onCreated(function bodyOnCreated() {
