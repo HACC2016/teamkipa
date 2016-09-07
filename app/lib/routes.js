@@ -24,15 +24,15 @@
 // });
 
 FlowRouter.route('/', {
-  name: 'home',
-  action() {
-    BlazeLayout.render('HomeLayout', {main: 'test'});
-  }
+    name: 'Main',
+    action() {
+        BlazeLayout.render('MainLayout');
+    }
 });
 
 FlowRouter.route('/dashboard', {
-  name: 'dashboard',
-  action() {
-    BlazeLayout.render('dashboard');
-  }
+    name: 'dashboard',
+    action() {
+        BlazeLayout.render('dashboard');
+    }
 });
