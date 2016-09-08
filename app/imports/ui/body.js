@@ -35,7 +35,9 @@ Template.body.events({
         Meteor.call('registers.insert', registerPhone);
 
         // Clear form
-        target.registerPhone.value = '';
+        target.registerPhone.value = "";
+
+        return false;
     }
 });
 

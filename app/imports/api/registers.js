@@ -17,15 +17,45 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-    'registers.insert' (registerPhone) {
-        check(registerPhone, String);
+    'registers.insert' (doc) {
+        // check(registerPhone, String);
+
+        id = Accounts.createUser({
+            username: doc.username,
+            password: doc.password,
+            profile: doc.profile
+        });
+
+        return id;
 
         Registers.insert({
-            // firstName,
-            // lastName,
-            registerPhone,
+            id,
+            // registerFName,
+            // registerLName,
+            // registerPhone,
             // registerEmail,
             createdAt: new Date()
         });
+    },
+    'registers.update': function (id, doc) {
+        /* Update account */
+        Meteor.users.update(id, {
+            $set: {
+                username: doc.username,
+                profile: doc.profile
+            }
+        });
+        /* Update password */
+        if (doc.password != 'the same') {
+            Accounts.setPassword(id, doc.password);
+        }
+
+        return true;
+    },
+    'registers.remove': function (id) {
+
+        Meteor.users.remove(id);
+
+        return id;
     }
 });

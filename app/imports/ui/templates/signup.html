@@ -1,0 +1,34 @@
+<template name="signup">
+    <div id="signup">
+        <h1>Sign up Now</h1>
+        <form class="new-user">
+            <div class="top-row">
+                <div class="field-wrap">
+                    <label>
+                        First Name<span class="req">*</span>
+                    </label>
+                    <input type="text" name="registerFName" required autocomplete="off" />
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Last Name<span class="req">*</span>
+                    </label>
+                    <input type="text" name="registerLName" required autocomplete="off" />
+                </div>
+            </div>
+            <div class="field-wrap">
+                    <label>
+                        Mobile<span class="req">*</span>
+                    </label>
+                    <input type="tel" name="registerPhone" required autocomplete="off" />
+                </div>
+            <div class="field-wrap">
+                <label>
+                    Password<span class="req">*</span>
+                </label>
+                <input type="password" name="registerPassword" required autocomplete="off" />
+            </div>
+            <button type="submit" class="button button-block">GET STARTED</button>
+        </form>
+    </div>
+</template>
