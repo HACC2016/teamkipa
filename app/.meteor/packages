@@ -24,3 +24,5 @@ accounts-password
 session
 kadira:flow-router
 kadira:blaze-layout
+http
+aldeed:simple-schema
