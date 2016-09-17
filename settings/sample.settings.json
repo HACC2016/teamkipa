@@ -1,0 +1,10 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "changeme",
+      "TWILIO_NUMBER": "changeme",
+      "TWILIO_ACCOUNT_SID": "changeme",
+      "TWILIO_AUTH_TOKEN": "changeme"
+    }
+  }
+}
