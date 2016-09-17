@@ -1,0 +1,16 @@
+<template name="ticketProfile">
+
+    <div class="jumbotron text-center">
+        <h2>Welcome to your dashboard!</h2>
+        <p>Review and update your information below or request a visit.</p>
+        <p><a class="btn btn-success btn-lg" href="{{pathFor 'request'}}" role="button">Start a Request</a></p>
+    </div>
+    <h4 class="page-header">Contact Information</h4>
+    {{#if currentUser}}
+        {{> Template.dynamic template="contactInformation"}}
+    {{/if}}
+
+    <h4 class="page-header">Your Requests</h4>
+    {{> requests}}
+
+</template>

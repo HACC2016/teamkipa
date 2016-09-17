@@ -1,0 +1,11 @@
+<template name="ticketList">
+  {{#each tickets}}
+    {{> ticket}}
+  {{else}}
+    {{#if isProfile}}
+      <p class="alert alert-info">You don't have any requests. Request now to add one.</p>
+    {{else}}
+      <p class="alert alert-info">No requests yet!</p>
+    {{/if}}
+  {{/each}}
+</template>

@@ -1,0 +1,14 @@
+<template name="ticketCategories">
+    <ul class="nav nav-tabs" role="tablist">
+        {{#with currentUser}}
+            <li role="presentation" data-ticket-type="Available Dates"><a href="#available-dates" aria-controls="available-dates" role="tab" data-toggle="tab">Available Dates</a></li>
+        {{/with}}
+    </ul>
+    <div class="tab-content">
+        {{#if currentUser}}
+            <div role="tabpanel" class="tab-pane active" id="my-tickets">
+                {{> Template.dynamic template="ticketList" data=myTickets}}
+            </div>
+        {{/if}}
+    </div>
+</template>
