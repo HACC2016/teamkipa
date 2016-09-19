@@ -18,7 +18,7 @@ Template.contactInformation.events({
             city: template.find("[name='city']").value,
             state: template.find("[name='state']").value,
             zipCode: template.find("[name='zipCode']").value,
-            userId: this.userId
+            userId: Meteor.userId()
         };
 
         Meteor.call('updateVisitor', visitor, function(error, response) {
