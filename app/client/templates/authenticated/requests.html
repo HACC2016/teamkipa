@@ -5,12 +5,12 @@
           <div class="panel-body">
             <p><strong>Date Request Sent:</strong> {{date}}</p>
             {{#with ticket this.ticketId}}
-                <p><strong>Visitor name:</strong>: {{name}}</p>
+                <p><strong>Visitor name</strong>: {{name}}</p>
             {{/with}}
 
             {{#with visitor this.userId}}
-                <p><strong>Inmate name:</strong> {{name}}</p>
-                <p><strong>Visit date:</strong> {{visitDate}}</p>
+                <p><strong>Inmate name</strong>: {{name}}</p>
+                <!-- <p><strong>Visit date:</strong> {{visitDate}}</p> -->
             {{/with}}
 
             <!-- {{#with visitor this.userId}}

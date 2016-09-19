@@ -10,10 +10,10 @@
         </thead>
         <tbody>
             <tr>
-                <td class="text-left">{{name}}</td>
-                <td class="text-left">{{dateOfBirth}}</td>
-                <td class="text-left">{{stateId}}</td>
-                <td class="text-left">{{visitDate}}</td>
+                <td>{{#if type}}{{type}} &mdash; {{/if}}{{>inmateInformation.name}}</td>
+                <td>{{#if type}}{{type}}{{/if}}{{inmateInformation.dateOfBirth}}</td>
+                <td>{{#if type}}{{type}}{{/if}}{{inmateInformation.stateId}}</td>
+                <td>{{date}}</td>
             </tr>
         </tbody>
     </table>

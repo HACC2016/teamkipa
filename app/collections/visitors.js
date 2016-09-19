@@ -60,6 +60,7 @@ var VisitorsSchema = new SimpleSchema({
     },
     "userId": {
         type: String,
+        defaultValue: Meteor.userId,
         label: "Associated User ID"
     }
 });

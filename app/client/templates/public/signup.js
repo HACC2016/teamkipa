@@ -57,5 +57,12 @@ Template.signup.events({
     'submit form': function(e) {
         // Prevent form from submitting.
         e.preventDefault();
+    },
+    'click input': function(event) {
+        if ($('input[type=checkbox]:checked').length > 0) {
+            $('#btnSubmit').show();
+        } else {
+            $('#btnSubmit').hide();
+        }
     }
 });
