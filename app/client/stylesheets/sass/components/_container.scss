@@ -7,5 +7,14 @@ body > .container {
 }
 
 .jumbotron {
-    background-color: 315481
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee
+}
+
+.img {
+    display: inline-block;
+    width: 50%;
 }

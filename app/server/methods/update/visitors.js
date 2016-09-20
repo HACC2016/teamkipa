@@ -3,11 +3,7 @@ Meteor.methods({
         check(visitor, Visitors.simpleSchema());
 
         try {
-            var visitorId = Visitors.update({ "userId": visitor.userId}, {
-                $set: { visitor }
-            });
-
-            return visitorId;
+            Meteor.users.update({ _id: Meteor.userId() }, {$set: { profile: visitor }});
         } catch (exception) {
             return exception;
         }

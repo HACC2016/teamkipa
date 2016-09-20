@@ -5,10 +5,18 @@
         <p>Review and update your information below or request a visit.</p>
         <p><a class="btn btn-success btn-lg" href="{{pathFor 'request'}}" role="button">Start a Request</a></p>
     </div>
-    <h4 class="page-header">Contact Information</h4>
-    {{#if currentUser}}
-        {{> Template.dynamic template="contactInformation"}}
-    {{/if}}
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h4 class="page-header">Update Contact Information</h4>
+            {{> Template.dynamic template="contactInformation"}}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            {{#if currentUser}}
+                <h4 class="page-header">Current Information</h4>
+                {{> Template.dynamic template="currentInformation"}}
+            {{/if}}
+        </div>
+    </div>
 
     <h4 class="page-header">Your Requests</h4>
     {{> requests}}

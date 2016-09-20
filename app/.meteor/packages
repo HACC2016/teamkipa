@@ -31,7 +31,7 @@ twbs:bootstrap
 fourseven:scss
 session
 check
-kadira:flow-router
-kadira:blaze-layout
+#kadira:flow-router
+#kadira:blaze-layout
 http
 aldeed:simple-schema

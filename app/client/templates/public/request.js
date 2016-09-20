@@ -69,7 +69,8 @@ Template.request.onRendered(function() {
                     secondaryAddress: template.find("[name='secondaryAddress']").value,
                     city: template.find("[name='city']").value,
                     state: template.find("[name='state']").value,
-                    zipCode: template.find("[name='zipCode']").value
+                    zipCode: template.find("[name='zipCode']").value,
+                    userId: this.userId
                 }
 
                 request.credentials = {
