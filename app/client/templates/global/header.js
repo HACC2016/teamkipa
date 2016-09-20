@@ -18,6 +18,7 @@ Template.header.events({
                 Bert.alert(error.reason, 'danger');
             } else {
                 Bert.alert('Succesfully logged out!', 'success');
+                Router.go('index');
             }
         });
     }
