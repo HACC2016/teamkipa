@@ -35,6 +35,7 @@ Template.signup.onRendered(function() {
                         name: "",
                         dateOfBirth: "",
                         mobilePhone: "",
+                        stateId: "",
                         streetAddress: "",
                         secondaryAddress: "",
                         city: "",
