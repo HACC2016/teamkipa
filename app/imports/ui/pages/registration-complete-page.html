@@ -1,0 +1,52 @@
+<template name="Registration_Complete_Page">
+
+  <!-- This header needs to migrate into header.html once login logic is added. -->
+  <div class="ui top fixed borderless menu">
+    <div class="ui container">
+      <a class="item" href="#"><img src="images/seal.png"></a>
+      <a class="item" href="#"><h2>Kipa</h2></a>
+    </div>
+
+  </div>
+  <hr>
+
+  <div style="padding-top: 10px" class="ui text container">
+
+    <h3>Registration Complete</h3>
+    
+    <p>Thank you for registering with the Kipa system.</p>
+
+    <p>You may now login to the system using your phone number and the following PIN number: 6782</p>
+
+    <p>Please keep your PIN number in a safe place. If you lose it, we can send it to you via text message.</p>
+
+    <form class="ui form login-form">
+
+      <div class="field">
+        <label>Your phone number</label>
+          <div class="field">
+            <input type="text" name="phonenumber" placeholder="808-333-4444">
+          </div>
+      </div>
+
+      <div class="field">
+        <label>Your PIN number</label>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="pin" placeholder="1234">
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="resendpin" id="resendpin" >
+              <label>Forgot my PIN. Please text it to me.</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="ui primary button" type="submit">Login</button>
+    </form>
+
+
+  </div>
+</template>

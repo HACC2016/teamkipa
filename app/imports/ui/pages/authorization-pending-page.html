@@ -1,0 +1,42 @@
+<template name="Authorization_Pending_Page">
+
+  <!-- This header needs to migrate into header.html once login logic is added. -->
+  <div class="ui top fixed borderless menu">
+    <div class="ui container">
+      <a class="item" href="#"><img src="images/seal.png"></a>
+      <a class="item" href="#"><h2>Kipa</h2></a>
+    </div>
+
+  </div>
+  <hr>
+
+  <div style="padding-top: 10px" class="ui text container">
+
+    <h3>Authorization Pending</h3>
+    
+    <p>Thank you for logging in to the Kipa system.</p>
+
+    <p>According to our records, you registered with this system to visit the detainee John Doe on September, 27, 2016.</p>
+
+    <p>The authorization process is not complete.  Authorization to use this system to request visits may take up to 10 business days.</p>
+
+    <p>If you would like to be informed via text message when authorization has been approved or declined, please check the box below and click submit. You can also return to this page at any time for an update.</p>
+
+    <form class="ui form text-authorization">
+
+      <div class="field">
+        <label>Text messaging</label>
+        <div class="field">
+          <div class="ui checkbox">
+            <input type="checkbox" name="authorizeviapin" id="authorizeviapin" >
+            <label>Inform me via text message when authorization process completes</label>
+          </div>
+        </div>
+      </div>
+
+      <button class="ui primary button" type="submit">Submit</button>
+    </form>
+
+
+  </div>
+</template>
