@@ -1,0 +1,52 @@
+<template name="currentInformation">
+    <div class="row">
+        <div class="col-xs-12 col-md-12 col-sm-12">
+            {{#if currentUser}}
+                <div class="form-group">
+                    <label for="name"><h4>Full Name</h4></label>
+                    <h4>{{fullName}}</h4>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-xs-4">
+                            <label for="name"><h4>Birthdate</h4></label>
+                            <h4>{{dateOfBirth}}</h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-xs-4">
+                            <label for="name"><h4>Cellular</h4></label>
+                            <h4>{{mobilePhone}}</h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-xs-4">
+                            <label for="name"><h4>State ID</h4></label>
+                            <h4>{{stateId}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name"><h4>Street Address</h4></label>
+                    <h4>{{streetAddress}}</h4>
+                </div>
+                <div class="form-group">
+                    <label for="name"><h4>Secondary Address</h4></label>
+                    <h4>{{secondaryAddress}}</h4>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-xs-4">
+                            <label for="name"><h4>City</h4></label>
+                            <h4>{{city}}</h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-xs-4">
+                            <label for="name"><h4>State</h4></label>
+                            <h4>{{state}}</h4>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-xs-4">
+                            <label for="name"><h4>Zip Code</h4></label>
+                            <h4>{{zipCode}}</h4>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</template>
