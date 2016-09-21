@@ -65,7 +65,7 @@ If OCCC staff approve the request, the home page enables them to make a visit re
 
 ![](https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/request-visit.png)
 
-According to Denise Johnston, it is OK for such requests to be immediately approved. So, the home page shows the following after selecting a visit time:
+According to OCCC staff, it is OK for such requests to be immediately approved. So, the home page shows the following after selecting a visit time:
 
 ![](https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/reserved-visit.png)
 
