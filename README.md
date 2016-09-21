@@ -72,4 +72,6 @@ Note that for this command to work:
 
   * You need to be authorized to deploy to philipmjohnson's galaxy account.  See Philip for details.
   
-  
+## Live prototype
+
+A prototype is deployed at: [http://kipa.meteorapp.com](http://kipa.meteorapp.com)
