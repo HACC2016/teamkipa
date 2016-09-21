@@ -12,7 +12,7 @@ Kipa currently implements a workflow based on the following pages:
 
 All users start at the following home page:
 
-![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template/master/doc/edit-page.png)
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/home.png)
  
 
 
