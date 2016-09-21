@@ -7,7 +7,7 @@ Doing scheduling poorly means one or both of the following:
   * You invest a lot of time and/or money.
   * You fail frequently.
   
-The [Oahu Community Correctional Facility](http://dps.hawaii.gov/about/divisions/corrections/occc/) currently attempts to schedule approximately 350 visits per week through a single phone line and a spreadsheet. This is "poor scheduling" in both senses:  OCCC staff spend over 30 hours a week on the phone with potential visitors, and many visitors fail to visit their loved one due to an inability to get through to OCCC staff, or because they failed to understand and comply with requirements for visitation. This has health and safety implications: visitation is a key part of the rehabilitation process, so improving scheduling might actually improve correctional outcomes. 
+The [Oahu Community Correctional Center](http://dps.hawaii.gov/about/divisions/corrections/occc/) currently attempts to schedule approximately 350 visits per week through a single phone line and a spreadsheet. This is "poor scheduling" in both senses:  OCCC staff spend over 30 hours a week on the phone with potential visitors, and many visitors fail to visit their loved one due to an inability to get through to OCCC staff, or because they failed to understand and comply with requirements for visitation. This has health and safety implications: visitation is a key part of the rehabilitation process, so improving scheduling might actually improve correctional outcomes. 
    
 Kipa takes into account the following issues in OCCC scheduling:
 
