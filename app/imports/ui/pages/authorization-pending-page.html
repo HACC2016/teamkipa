@@ -1,0 +1,35 @@
+<template name="Authorization_Pending_Page">
+
+  <div style="padding-top: 10px" class="ui text container">
+
+    <h3>Authorization Pending</h3>
+    
+    <p>Thank you for logging in to the Kipa system.</p>
+
+    <p>According to our records, you registered with this system to visit the detainee John Doe on September, 27, 2016.</p>
+
+    <p>The authorization process is not complete.  Authorization to use this system to request visits may take up to 10 business days.</p>
+
+    <p>The checkbox below indicates whether you have enabled text messaging to notify you automatically when the authorization process concludes. If you want to change your preferences, click the checkbox and press Update.</p>
+
+    <form class="ui form text-authorization">
+      <div class="ui stackable grid">
+
+        <div class="twelve wide middle aligned column">
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="text-message-notification" id="text-message-notification" checked="checked">
+              <label>Inform me via text message when authorization process completes</label>
+            </div>
+          </div>
+        </div>
+        <div class="two wide column">
+          <button class="ui primary tiny button" type="submit">Update</button>
+        </div>
+      </div>
+    </form>
+
+    <p style="padding-top: 10px">You can use this system at any time to check the status of authorization.</p>
+
+  </div>
+</template>

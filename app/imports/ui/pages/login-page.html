@@ -1,0 +1,36 @@
+<template name="Login_Page">
+
+  <div style="padding-top: 10px" class="ui text container">
+
+    <h3>Login</h3>
+
+    <form class="ui form login-form">
+
+      <div class="field">
+        <label>Your phone number</label>
+          <div class="field">
+            <input type="text" name="phonenumber" placeholder="808-333-4444">
+          </div>
+      </div>
+
+      <div class="field">
+        <label>Your PIN number</label>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="pin" placeholder="1234">
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="resendpin" id="resendpin">
+              <label>Forgot my PIN. Please text it to me.</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="ui primary button" type="submit">Login</button>
+    </form>
+
+
+  </div>
+</template>

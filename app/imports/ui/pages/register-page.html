@@ -1,0 +1,69 @@
+<template name="Register_Page">
+
+  <div style="padding-top: 10px" class="ui text container">
+
+    <h3>Registration</h3>
+
+    <p>By filling out and submitting the following form, you create an account on this system
+      and request authorization from OCCC staff to visit a detainee.</p>
+
+    <p>Authorization typically requires between 5-10 working days.</p>
+
+    <p>You can come back and login to this app to see the status of authorization. If you enable text messaging below,
+      we will send you a text message when authorization has been approved or declined.</p>
+
+    <form class="ui form visitor-registration-form">
+
+      <div class="field">
+        <label>Your first and last name</label>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="visitorfirstname" placeholder="Jane">
+          </div>
+          <div class="field">
+            <input type="text" name="visitorlastname" placeholder="Doe">
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Your phone number</label>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="phonenumber" placeholder="808-888-8888">
+          </div>
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="textmessage" id="textmessage" checked="checked">
+              <label>Allow text messages</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Detainee first and last name</label>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="detaineefirstname" placeholder="Sam">
+          </div>
+          <div class="field">
+            <input type="text" name="detaineelastname" placeholder="Doe">
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Detainee state ID</label>
+        <div class="field">
+          <input type="text" name="detaineestateid" placeholder="1234-5678">
+        </div>
+
+      </div>
+
+      <button class="ui primary button" type="submit">Submit</button>
+    </form>
+
+
+  </div>
+</template>

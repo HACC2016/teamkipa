@@ -1,0 +1,18 @@
+body {
+  padding-top: 60px;  /* Move body of page below navbar. */
+}
+
+.ui.menu {
+  border: none;
+  box-shadow: none;
+}
+
+hr {
+  margin: 0px;
+  color: #1678c2;
+  border-color: #1678c2;
+}
+
+h1, h2,h3,h4,h5{
+  color: #1678c2;
+}

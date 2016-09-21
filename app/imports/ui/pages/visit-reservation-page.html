@@ -1,0 +1,37 @@
+<template name="Visit_Reservation_Page">
+
+  <div style="padding-top: 10px" class="ui text container">
+
+    <h3>Visit reservation</h3>
+
+    <p>You have a reservation to visit Joe Doe on Saturday, October 5, at 12:30pm.</p>
+
+    <form class="ui form visit-cancel-form">
+      <div class="ui stackable grid">
+
+        <div class="eight wide middle aligned column">
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="text-message-notification" id="text-message-notification" checked="checked">
+              <label>Send text message reminder on the day of the visit.</label>
+            </div>
+          </div>
+        </div>
+        <div class="four wide column">
+          <button class="ui primary tiny button" type="submit">Update</button>
+        </div>
+      </div>
+    </form>
+
+    <p style="padding-top:10px">If you need to reschedule this visit, please press the button below to cancel it. You
+      will then be taken to a page where you can request a new visit.</p>
+
+    <form class="ui form visit-cancel-form">
+      <div class="field">
+        <button class="ui primary button" type="submit">Cancel Visit</button>
+      </div>
+    </form>
+
+
+  </div>
+</template>
