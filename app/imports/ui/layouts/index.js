@@ -1,5 +1,5 @@
-import './app-visitor-body.html';
-import './app-visitor-body.js';
+import './app-body.html';
+import './app-body.js';
 import './app-not-found.html';
 import './footer.html';
 import './header.html';

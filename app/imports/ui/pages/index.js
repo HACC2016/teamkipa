@@ -1,3 +1,9 @@
+import './admin-home-page.html';
+import './admin-home-page.js';
+
+import './admin-process-authorization-request-page.html';
+import './admin-process-authorization-request-page.js';
+
 import './authorization-declined-page.html';
 import './authorization-declined-page.js';
 
@@ -17,9 +23,6 @@ import './login-page.html';
 import './login-page.js';
 
 import './site-map-page.html';
-
-import './visit-pending-request-page.html';
-import './visit-pending-request-page.js';
 
 import './visit-request-page.html';
 import './visit-request-page.js';
