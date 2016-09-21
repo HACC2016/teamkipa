@@ -1,10 +1,47 @@
-# Team Kipa
+## Kipa: A system to improve OCCC visitation scheduling
 
-Team Kipa is creating an application for OCCC to support their visitation process.
+*Scheduling is easy to do if you are willing to do it poorly.*
 
-"Kipa" is an abbreviation of "mea kipa", which means "visitor" in Hawaiian.
+Doing scheduling poorly means one or both of the following:
 
-## Workflow 
+  * You are willing to invest a lot of time or money doing it.
+  * You are willing to fail to schedule frequently.
+  
+The [Oahu Community Correctional Facility](http://dps.hawaii.gov/about/divisions/corrections/occc/) currently attempts to schedule approximately 350 visits per week through a single phone line and a spreadsheet. This is "poor scheduling" in both senses:  OCCC staff spend over 30 hours a week on the phone with potential visitors, and many visitors cannot succeed in visiting their loved one due to an inability to get through to OCCC staff, or through failure to understand and comply with requirements for visitation. This has health and safety implications: visitation is a key part of the rehabilitation process, so improving the scheduling process can help yield better correctional outcomes. 
+   
+The design of Kipa takes into account the following issues in OCCC scheduling:
+
+* OCCC detainees are allowed up to 12 visitors, and must provide staff with those names. 
+* Visitors must submit documentation to OCCC in order to be authorized to request visits. 
+* Once authorized, visitors and OCCC staff must agree upon a 30 minute time slot during the next seven days.
+* Visitors must dress appropriately and bring additional documentation at the time of the visit.
+* Unpredictable changes in staffing resources means that visits might be cancelled at the last minute. 
+* There are over 6,000 potential visitors, and the pool of visitors is constantly changing as detainees enter and exit OCCC.
+
+### Benefits
+
+Our vision for Kipa is to create technology that reduces the time, expense, and failure rate for OCCC visitation scheduling.
+
+#### Benefits to visitors
+
+While the phone line will still be available, most visitors will not need to use it. Instead, they will use Kipa (via a desktop computer or mobile phone) to guide them through the scheduling process. 
+
+Recognizing that the OCCC visitor population varies broadly in technological sophistication, the Kipa system will use text messaging whenever possible for communication with visitors.  For example, Kipa will automatically generate a text message to visitors when:
+
+* A visitor has become authorized to request visits. The text message will provide instructions on how to start requesting visits.
+* A visitor's request for a visit has been approved. The text message will indicate the time and date of the approved visit.
+* The day of a visit has arrived. The text message will remind them of the time, the required dress code, and required documentation.
+* A scheduled visit must be cancelled due to OCCC staffing issues or other problems. The text message will tell the visitor that the visit has been cancelled and provide instructions on how to reschedule.
+
+#### Benefits to OCCC staff
+
+One goal is a dramatic reduction in the need to schedule visits via the phone. Although phone-based scheduling will still be available, we believe that text message-enabled phones are available to almost all of the visitor population, and that they will find this a faster, more effective, less error prone, and less stressful way to manage visits with their loved ones. 
+
+A second goal is to reduce non-compliance with OCCC policies regarding visitation. Visitors will have easier access to rules regarding documentation and dress code, and the system will automatically generate reminders on the day of the visit.  
+
+A third goal is to simplify visit cancellation procedures.  If an unforeseen event results in cancellation of one or more visitation sessions, OCCC staff can use Kipa to generate text messages to visitors informing them of the cancellation and providing instructions on how to reschedule. 
+
+## Kipa in action
 
 Kipa currently implements a workflow based on about a dozen pages. 
 
