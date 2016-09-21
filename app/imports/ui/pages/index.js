@@ -16,6 +16,14 @@ import './registration-complete-page.js';
 import './login-page.html';
 import './login-page.js';
 
+import './site-map-page.html';
+
+import './visit-pending-request-page.html';
+import './visit-pending-request-page.js';
+
 import './visit-request-page.html';
 import './visit-request-page.js';
+
+import './visit-reservation-page.html';
+import './visit-reservation-page.js';
 

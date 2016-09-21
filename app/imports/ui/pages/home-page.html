@@ -1,16 +1,6 @@
 <template name="Home_Page">
 
-  <!-- This header needs to migrate into header.html once login logic is added. -->
-  <div class="ui top fixed borderless menu">
-    <div class="ui container">
-      <a class="item" href="#"><img src="images/seal.png"></a>
-      <a class="item" href="#"><h2>Kipa</h2></a>
-    </div>
-
-  </div>
-  <hr>
-
-  <div style="padding-top: 10px" class="ui text container">
+  <div style="padding-top: 20px" class="ui text container">
 
     <h3>Welcome to Kipa</h3>
 
@@ -24,11 +14,11 @@
 
     <div class="ui equal width stackable grid">
       <div class="column">
-        <button class="fluid ui primary button">Register</button>
+        <a href="/register" class="fluid ui primary button">Request Authorization</a>
         <i>If you are here for the first time and want to request authorization to visit a detainee.</i>
       </div>
       <div class="column">
-        <button class="fluid ui green button">Login</button>
+        <a href="/login" class="fluid ui green button">Login</a>
         <i>If you have already registered and want to see the status of your authorization or visit.</i>
       </div>
 

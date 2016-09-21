@@ -1,18 +1,19 @@
-<template name="Visit_Request_Page">
+<template name="Visit_Pending_Request_Page">
 
   <div style="padding-top: 10px" class="ui text container">
 
-    <h3>Request Visit</h3>
+    <h3>Pending Visit Request</h3>
 
-    <p>You are authorized to request a visit with Joe Doe during the next seven days.</p>
+    <p>You have a pending request to visit Joe Doe at one the following times during the next seven days.</p>
 
-    <p>The following times are currently available. Please select any times you are interested in. We will notify you of
-      the specific date and time we reserved for your visit.</p>
+    <p>This request has not yet been processed and no visit time has been assigned.</p>
+
+    <p>If you wish to edit your preferred dates and times, please edit the checkboxes and press "Update request".</p>
 
     <form class="ui form visit-request-form">
 
       <div class="field">
-        <label>Possible visit dates and times</label>
+        <label>Pending requests and available times</label>
 
         <div class="ui equal width stackable grid">
 
@@ -20,7 +21,7 @@
             <h4>Tue, 9/24</h4>
             <div class="field">
               <div class="ui checkbox">
-                <input type="checkbox" name="request-date" id="request-date-1">
+                <input type="checkbox" name="request-date" id="request-date-1" checked="checked">
                 <label>8:00am</label>
               </div>
               <div class="ui checkbox">
@@ -42,7 +43,7 @@
                 <label>9:30am</label>
               </div>
               <div class="ui checkbox">
-                <input type="checkbox" name="request-date" id="request-date-2">
+                <input type="checkbox" name="request-date" id="request-date-10">
                 <label>11:30am</label>
               </div>
             </div>
@@ -56,15 +57,15 @@
                 <label>9:30am</label>
               </div>
               <div class="ui checkbox">
-                <input type="checkbox" name="request-date" id="request-date-3">
+                <input type="checkbox" name="request-date" id="request-date-11">
                 <label>10:30am</label>
               </div>
               <div class="ui checkbox">
-                <input type="checkbox" name="request-date" id="request-date-3">
+                <input type="checkbox" name="request-date" id="request-date-12">
                 <label>11:00am</label>
               </div>
               <div class="ui checkbox">
-                <input type="checkbox" name="request-date" id="request-date-3">
+                <input type="checkbox" name="request-date" id="request-date-13" checked="checked">
                 <label>1:30pm</label>
               </div>
             </div>
@@ -74,7 +75,7 @@
             <h4>Fri, 9/27</h4>
             <div class="field">
               <div class="ui checkbox">
-                <input type="checkbox" name="request-date" id="request-date-4">
+                <input type="checkbox" name="request-date" id="request-date-4" checked="checked">
                 <label>9:30am</label>
               </div>
             </div>
@@ -94,7 +95,7 @@
             <h4>Sun, 9/29</h4>
             <div class="field">
               <div class="ui checkbox">
-                <input type="checkbox" name="request-date" id="request-date-6">
+                <input type="checkbox" name="request-date" id="request-date-6" checked="checked">
                 <label>4:30pm</label>
               </div>
             </div>
@@ -115,7 +116,19 @@
 
       </div>
 
-      <button class="ui primary button" type="submit">Make request</button>
+      <div class="ui stackable grid">
+        <div class="four wide column">
+          <button class="ui primary button" type="submit">Update request</button>
+        </div>
+        <div class="twelve wide middle aligned column">
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" name="text-message-notification" id="text-message-notification" checked="checked">
+              <label>Send text message when my request is processed.</label>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
 
 

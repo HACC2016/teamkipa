@@ -8,6 +8,13 @@ FlowRouter.route('/', {
   },
 });
 
+FlowRouter.route('/site-map', {
+  name: 'Site_Map_Page',
+  action() {
+    BlazeLayout.render('App_Visitor_Body', { main: 'Site_Map_Page' });
+  },
+});
+
 FlowRouter.route('/register', {
   name: 'Register',
   action() {
@@ -40,6 +47,27 @@ FlowRouter.route('/authorization-declined', {
   name: 'Authorization_Declined_Page',
   action() {
     BlazeLayout.render('App_Visitor_Body', { main: 'Authorization_Declined_Page' });
+  },
+});
+
+FlowRouter.route('/request-visit', {
+  name: 'Visit_Request_Page',
+  action() {
+    BlazeLayout.render('App_Visitor_Body', { main: 'Visit_Request_Page' });
+  },
+});
+
+FlowRouter.route('/pending-visit-request', {
+  name: 'Visit_Pending_Request_Page',
+  action() {
+    BlazeLayout.render('App_Visitor_Body', { main: 'Visit_Pending_Request_Page' });
+  },
+});
+
+FlowRouter.route('/visit-reservation', {
+  name: 'Visit_Reservation_Page',
+  action() {
+    BlazeLayout.render('App_Visitor_Body', { main: 'Visit_Reservation_Page' });
   },
 });
 
