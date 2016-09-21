@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Teamkipa by HACC2016</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Teamkipa</h1>
+      <h2 class="project-tagline">HACC repository for Team Kipa</h2>
+      <a href="https://github.com/HACC2016/teamkipa" class="btn">View on GitHub</a>
+      <a href="https://github.com/HACC2016/teamkipa/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/HACC2016/teamkipa/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="team-kipa" class="anchor" href="#team-kipa" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Team Kipa</h1>
+
+<p>Team Kipa is creating an application for OCCC to support their visitation process.</p>
+
+<p>"Kipa" is an abbreviation of "mea kipa", which means "visitor" in Hawaiian.</p>
+
+<h2>
+<a id="workflow" class="anchor" href="#workflow" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Workflow</h2>
+
+<p>Kipa currently implements a workflow based on about a dozen pages. </p>
+
+<p>All users start at the following home page:</p>
+
+<p><img src="https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/home.png" alt=""></p>
+
+<p>Admins and registered users can go to the login page.  New visitors must "Request authorization":</p>
+
+<p><img src="https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/register.png" alt=""></p>
+
+<p>A new user, once they submit their information, must wait to be authorized by OCCC staff. During that time their home page displays this:</p>
+
+<p><img src="https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/authorization-pending.png" alt=""></p>
+
+<p>If OCCC staff decline the visitor's request for visitation rights, the home page becomes this:</p>
+
+<p><img src="https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/authorization-declined.png" alt=""></p>
+
+<p>If OCCC staff approve the request, the home page enables them to make a visit request:</p>
+
+<p><img src="https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/request-visit.png" alt=""></p>
+
+<p>According to Denise Johnston, it is OK for such requests to be immediately approved. So, the home page shows the following after selecting a visit time:</p>
+
+<p><img src="https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/reserved-visit.png" alt=""></p>
+
+<p>The user can cancel and re-reserve visits as they like during the seven day interval.</p>
+
+<p>Once the visit has happened, the home page goes back to enabling them to reserve a new visit.</p>
+
+<p>This workflow involves interaction with OCCC staff for approval processing. Here is the admin page:</p>
+
+<p><img src="https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/admin-home-page.png" alt=""></p>
+
+<p>In order to approve a request to become an authorized visitor, an admin can click on the name of a user requesting this status to go to this page:</p>
+
+<p><img src="https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/admin-process-authorization.png" alt=""></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Download and install the latest version of <a href="https://www.meteor.com/">Meteor</a>.</p>
+
+<p>Bring up a shell, and cd into the app directory.</p>
+
+<p>To run locally:</p>
+
+<pre><code>meteor npm install
+meteor
+</code></pre>
+
+<h2>
+<a id="deployment" class="anchor" href="#deployment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deployment</h2>
+
+<p>Kipa is currently deployed to <a href="http://galaxy.meteor.com">Galaxy</a>.  To successfully deploy to Galaxy, invoke the following command from within the app/ directory:</p>
+
+<pre><code>DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy kipa.meteorapp.com --settings ../settings/settings.json --owner philipmjohnson
+</code></pre>
+
+<p>Note that for this command to work:</p>
+
+<ul>
+<li><p>You need to have a settings/settings.json file. See the file settings/sample.settings.json for hints on how to construct this file.</p></li>
+<li><p>You need to be authorized to deploy to philipmjohnson's galaxy account.  See Philip for details.</p></li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/HACC2016/teamkipa">Teamkipa</a> is maintained by <a href="https://github.com/HACC2016">HACC2016</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
