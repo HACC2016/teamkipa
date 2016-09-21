@@ -1,5 +1,5 @@
 {
-  "defaultAccount": {"username": "John", "password": "changeme"},
+  "defaultAdminAccount": {"username": "admin", "password": "changeme"},
   "galaxy.meteor.com": {
     "env": {
       "MONGO_URL": "changeme",

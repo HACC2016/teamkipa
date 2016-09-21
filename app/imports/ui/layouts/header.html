@@ -1,13 +1,17 @@
 <template name="Header">
-  <div class="ui top fixed borderless menu">
-    <div class="ui container">
-      <a class="item" href="#"><img src="images/seal.png"></a>
-      <a class="item" href="#"><h2>OCCC Visitation</h2></a>
-      <a class="right item" href="/site-map">Site Map</a>
+    <div class="ui top fixed borderless menu">
+        <div class="ui container">
+            <a class="item" href="#"><img src="images/seal.png"></a>
+            <a class="item" href="#"><h2>OCCC Visitation</h2></a>
+            {{#if currentUser}}
+                {{#if isInRole 'visitor'}}
+                    Welcome
+                {{/if}}
+            {{/if}}
+            <a class="right item" href="/site-map">Site Map</a>
+        </div>
     </div>
-
-  </div>
-  <div class="ui container">
-    <hr>
-  </div>
+    <div class="ui container">
+        <hr>
+    </div>
 </template>
