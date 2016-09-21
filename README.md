@@ -4,6 +4,18 @@ Team Kipa is creating an application for OCCC to support their visitation proces
 
 "Kipa" is an abbreviation of "mea kipa", which means "visitor" in Hawaiian.
 
+## Workflow 
+
+Kipa currently implements a workflow based on the following pages:
+
+#### Home page
+
+All users start at the following home page:
+
+![](https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template/master/doc/edit-page.png)
+ 
+
+
 ## Installation
 
 Download and install the latest version of [Meteor](https://www.meteor.com/).
