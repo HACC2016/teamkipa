@@ -37,34 +37,32 @@ Visitors.attachSchema(new SimpleSchema({
     type: String,
     optional: false,
     max: 30,
-    autoform: {
-      group: visitors,
-      placeholder: 'Jane',
-    },
   },
   lastname: {
     label: 'Last Name',
     type: String,
     optional: false,
     max: 30,
-    autoform: {
-      group: visitors,
-      placeholder: 'Doe',
-    },
   },
   phonenumber: {
     label: 'Your phone number',
     type: String,
     optional: false,
     max: 12,
-    autoform: {
-      group: visitors,
-      placeholder: '808-888-8888',
-    },
   },
   allowtexts: {
     label: 'Allow text messages',
     type: Boolean,
+    optional: false,
+  },
+  isfemale: {
+    label: 'Female',
+    type: Boolean,
+    optional: false,
+  },
+  dateofbirth: {
+    label: 'Date of Birth',
+    type: String,
     optional: false,
   },
   detaineefirstname: {
@@ -72,33 +70,29 @@ Visitors.attachSchema(new SimpleSchema({
     type: String,
     optional: false,
     max: 40,
-    autoform: {
-      group: visitors,
-      placeholder: 'Sam',
-    },
   },
   detaineelastname: {
     label: 'Detainee Last Name',
     type: String,
     optional: false,
     max: 40,
-    autoform: {
-      group: visitors,
-      placeholder: 'Doe',
-    },
   },
   detaineestateid: {
     label: 'Detainee State ID',
     type: String,
     optional: false,
     max: 20,
-    autoform: {
-      group: visitors,
-      placehoder: '1234-5678',
-    },
   },
   state: {
     type: String,
     optional: true,
   },
+  userid: {
+    type: SimpleSchema.RegEx.Id,
+    optional: false,
+  },
+  pin: {
+    type: String,
+    optional: false,
+  }
 }));

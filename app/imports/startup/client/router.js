@@ -22,7 +22,7 @@ FlowRouter.route('/register', {
   },
 });
 
-FlowRouter.route('/registration-complete', {
+FlowRouter.route('/registration-complete/:id', {
   name: 'Registration_Complete_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Registration_Complete_Page' });
