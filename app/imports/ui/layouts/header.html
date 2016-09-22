@@ -5,8 +5,9 @@
             <a class="item" href="#"><h2>OCCC Visitation</h2></a>
             {{#if currentUser}}
                 {{#if isInRole 'visitor'}}
-                    Welcome
+                    <a class="item">Welcome {{firstname}}&nbsp;&nbsp; {{phonenumber}}</a>
                 {{/if}}
+                <button class="logout right item">Logout</button>
             {{/if}}
             <a class="right item" href="/site-map">Site Map</a>
         </div>

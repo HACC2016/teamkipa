@@ -1,7 +1,7 @@
 /**
  * This file is a part of teamkipa.
  *
- * Created by Cam Moore on 9/21/16.
+ * Created by Cam Moore on 9/22/16.
  *
  * Copyright (C) 2016 Cam Moore.
  *
@@ -19,22 +19,31 @@
  */
 
 import { Meteor } from 'meteor/meteor';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { Accounts } from 'meteor/accounts-base';
-import { Roles } from 'meteor/alanning:roles';
+import { Template } from 'meteor/templating';
+import { Visitors } from '../../../imports/api/visitor/visitors';
 
-Meteor.methods({
-  'create.visitor'({ username, password }) {
-    new SimpleSchema({
-      username: { type: String },
-      password: { type: String }
-    }).validate({ username, password });
 
-    if (Meteor.users.find({ username }).count() === 0) {
-      const id = Accounts.createUser({ username, password });
-      Roles.addUsersToRoles(id, ['visitor']);
-      return id;
-    }
-    return null;
+Template.visitor.helpers({
+  isAuthPending: () => {
+    const userid = Meteor.userId();
+    const visitor = Visitors.findOne({ userid });
+    return visitor.state === 'new';
   },
 });
+
+Template.visitor.events({
+  // add your events here
+});
+
+Template.visitor.onCreated(function () {
+  // add your statement here
+});
+
+Template.visitor.onRendered(function () {
+  // add your statement here
+});
+
+Template.visitor.onDestroyed(function () {
+  // add your statement here
+});
+
