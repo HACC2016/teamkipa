@@ -58,7 +58,7 @@ Visitors.attachSchema(new SimpleSchema({
   isfemale: {
     label: 'Female',
     type: Boolean,
-    optional: false,
+    optional: true,
   },
   dateofbirth: {
     label: 'Date of Birth',
@@ -94,5 +94,5 @@ Visitors.attachSchema(new SimpleSchema({
   pin: {
     type: String,
     optional: false,
-  }
+  },
 }));
