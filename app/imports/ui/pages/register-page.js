@@ -24,18 +24,18 @@ Template.Register_Page.events({
     const detaineelastname = event.target.detaineelastname.value;
     const detaineestateid = event.target.detaineestateid.value;
     const dateofbirth = event.target.dateofbirth.value;
-    const isfemale = event.target.female.checked;
     const state = 'new';
     const rand = Math.floor((Math.random() * 10000));
     const pin = ("0" + rand).substr(-4);
     let userid = 0;
-    const id = Visitors.insert({ firstname, lastname, phonenumber, allowtexts, detaineefirstname, detaineelastname, detaineestateid, state, dateofbirth, isfemale, userid, pin });
+    const id = Visitors.insert({ firstname, lastname, phonenumber, allowtexts, detaineefirstname, detaineelastname, detaineestateid, state, dateofbirth, userid, pin });
     Meteor.call('create.user', { username: phonenumber, password: pin }, (err, res) => {
       if (err) {
         alert(err);
       } else {
         userid = res;
         Visitors.update({ _id: id }, { $set: { userid }})
+        Roles.addUsersToRoles(id, ['visitor']);
       }
     });
     FlowRouter.go(`/registration-complete/${id}`);
