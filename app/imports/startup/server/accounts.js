@@ -12,8 +12,8 @@ if (Roles.getAllRoles().length === 0) {
 }
 
 /* When running app for first time, pass a settings file to set up a default user account. */
-if (Meteor.users.find().count() === 0) {
-  if (!!Meteor.settings.defaultAdminAccount) {
+if (!!Meteor.settings.defaultAdminAccount) {
+  if (Meteor.users.find({ username: Meteor.settings.defaultAdminAccount.username }).count() === 0) {
     const id = Accounts.createUser({
       username: Meteor.settings.defaultAdminAccount.username,
       password: Meteor.settings.defaultAdminAccount.password,

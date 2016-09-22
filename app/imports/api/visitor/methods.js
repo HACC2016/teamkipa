@@ -21,9 +21,10 @@
 import { Meteor } from 'meteor/meteor';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Accounts } from 'meteor/accounts-base';
+import { Roles } from 'meteor/alanning:roles';
 
 Meteor.methods({
-  'create.user'({ username, password }) {
+  'create.visitor'({ username, password }) {
     new SimpleSchema({
       username: { type: String },
       password: { type: String }
@@ -31,8 +32,9 @@ Meteor.methods({
 
     if (Meteor.users.find({ username }).count() === 0) {
       const id = Accounts.createUser({ username, password });
+      Roles.addUsersToRoles(id, ['visitor']);
       return id;
     }
-    return None;
-  }
+    return null;
+  },
 });

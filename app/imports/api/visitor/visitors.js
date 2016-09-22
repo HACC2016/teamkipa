@@ -94,5 +94,5 @@ Visitors.attachSchema(new SimpleSchema({
   pin: {
     type: String,
     optional: false,
-  }
+  },
 }));

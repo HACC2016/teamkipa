@@ -1,4 +1,7 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Roles } from 'meteor/alanning:roles';
 
 Template.Login_Page.onCreated(function onCreated() {
   // placeholder: typically you will put global subscriptions here if you remove the autopublish package.
@@ -9,5 +12,22 @@ Template.Login_Page.helpers({
 });
 
 Template.Login_Page.events({
-  // placeholder: if you have a form, handle the associated events here.
+  submit: (event) => {
+    event.preventDefault();
+    const username = event.target.phonenumber.value;
+    const password = event.target.pin.value;
+    Meteor.loginWithPassword(username, password, (err) => {
+      if (err) {
+        // need to set an error message on the login page.
+        alert(err);
+      } else {
+        const userId = Meteor.userId();
+        if (Roles.userIsInRole(userId, ['admin'])) {
+          FlowRouter.go('/admin-home');
+        } else {
+          FlowRouter.go('/visitor');
+        }
+      }
+    });
+  },
 });
