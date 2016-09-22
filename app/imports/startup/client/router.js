@@ -71,10 +71,10 @@ FlowRouter.route('/admin-home', {
   },
 });
 
-FlowRouter.route('/admin-process-authorization-request', {
-  name: 'Admin_Process_Authorization_Request_Page',
+FlowRouter.route('/admin-manage-visitor', {
+  name: 'Admin_Manage_Visitor_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Admin_Process_Authorization_Request_Page' });
+    BlazeLayout.render('App_Body', { main: 'Admin_Manage_Visitor_Page' });
   },
 });
 
