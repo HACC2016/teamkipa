@@ -31,6 +31,7 @@ Template.Register_Page.events({
       detaineelastname, detaineestateid, state, dateofbirth, userid, pin });
     Meteor.call('create.visitor', { username: phonenumber, password: pin }, (err, res) => {
       if (err) {
+        // need to do something better than alert.
         alert(err);
       } else {
         userid = res;
