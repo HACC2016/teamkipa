@@ -2,7 +2,7 @@
   <td>
     <ol class="schedule-cell">
       {{#each visitor in visitors}}
-      <li>{{visitor}}</li>
+      <li><a href="/admin-manage-visitor?visitorID={{getID visitor}}">{{getName visitor}}</a></li>
       {{/each}}
     </ol>
   </td>
