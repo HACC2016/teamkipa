@@ -46,14 +46,38 @@ export function thisDay() {
   return moment().format('YYYY-MM-DD');
 }
 
+/* Returns a future day, determined by incrementing today, in YYYY-MM-DD format, suitable for the day field */
+export function futureDay(numDays) {
+  return moment().add(numDays, 'days').format('YYYY-MM-DD');
+}
+
+/* Returns an array of numDays days, starting from today, in YYYY-MM-DD format, suitable for the day field. */
+export function dayRange(numDays) {
+  const days = [];
+  for (let i = 0; i < numDays; i++) {
+    days.push(futureDay(i));
+  }
+  return days;
+}
+
+/* Returns a week from now in YYYY-MM-DD format, suitable for the day field. */
+export function endOfWeek() {
+  return moment().add(6, 'days').format('YYYY-MM-DD');
+}
+
 /**
  * Returns a cursor to numDays number of timeslots, in row-major order, starting with this Day.
  * @returns {Cursor}
  */
 export function getTimeSlotsCursor(numDays) {
-  const endOfWeek = moment().add(numDays, 'days').format('YYYY-MM-DD');
-  return TimeSlots.find({ day: { $gte: thisDay(), $lte: endOfWeek } }, { sort: { key: 1 } });
+  const lastDay = moment().add(numDays, 'days').format('YYYY-MM-DD');
+  return TimeSlots.find({ day: { $gte: thisDay(), $lte: lastDay } }, { sort: { key: 1 } });
 }
+
+export function getTimeSlotRowData(slot) {
+  return TimeSlots.find({ slot, day: { $gte: thisDay(), $lte: endOfWeek() } }, { sort: { key: 1 } });
+}
+
 
 /** Adds visitor to the visitors array for day and slot. */
 export function addVisitor(day, slot, visitor) {
