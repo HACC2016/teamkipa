@@ -1,5 +1,7 @@
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Session } from 'meteor/session';
+import { Accounts } from 'meteor/accounts-base';
 import { visitors, Visitors } from '/imports/api/visitor/visitors';
 
 Template.Register_Page.onCreated(function onCreated() {
@@ -21,9 +23,21 @@ Template.Register_Page.events({
     const detaineefirstname = event.target.detaineefirstname.value;
     const detaineelastname = event.target.detaineelastname.value;
     const detaineestateid = event.target.detaineestateid.value;
+    const dateofbirth = event.target.dateofbirth.value;
+    const isfemale = event.target.female.checked;
     const state = 'new';
-    // console.log(firstname, lastname, phonenumber, allowtexts, detaineefirstname, detaineelastname, detaineestateid, state);
-    const id = Visitors.insert({ firstname, lastname, phonenumber, allowtexts, detaineefirstname, detaineelastname, detaineestateid, state  });
-    // FlowRouter.go(`/registration-complete?${id}`);
+    const rand = Math.floor((Math.random() * 10000));
+    const pin = ("0" + rand).substr(-4);
+    let userid = 0;
+    const id = Visitors.insert({ firstname, lastname, phonenumber, allowtexts, detaineefirstname, detaineelastname, detaineestateid, state, dateofbirth, isfemale, userid, pin });
+    Meteor.call('create.user', { username: phonenumber, password: pin }, (err, res) => {
+      if (err) {
+        alert(err);
+      } else {
+        userid = res;
+        Visitors.update({ _id: id }, { $set: { userid }})
+      }
+    });
+    FlowRouter.go(`/registration-complete/${id}`);
   }
 });

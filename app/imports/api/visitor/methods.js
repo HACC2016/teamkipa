@@ -1,7 +1,7 @@
 /**
  * This file is a part of teamkipa.
  *
- * Created by Cam Moore on 9/20/16.
+ * Created by Cam Moore on 9/21/16.
  *
  * Copyright (C) 2016 Cam Moore.
  *
@@ -18,5 +18,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import './visitors';
-import './methods';
+import { Meteor } from 'meteor/meteor';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { Accounts } from 'meteor/accounts-base';
+
+Meteor.methods({
+  'create.user'({ username, password }) {
+    new SimpleSchema({
+      username: { type: String },
+      password: { type: String }
+    }).validate({ username, password });
+
+    if (Meteor.users.find({ username }).count() === 0) {
+      const id = Accounts.createUser({ username, password });
+      return id;
+    }
+    return None;
+  }
+});

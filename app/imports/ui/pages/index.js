@@ -1,8 +1,8 @@
 import './admin-home-page.html';
 import './admin-home-page.js';
 
-import './admin-process-authorization-request-page.html';
-import './admin-process-authorization-request-page.js';
+import './admin-manage-visitor.html';
+import './admin-manage-visitor.js';
 
 import './authorization-declined-page.html';
 import './authorization-declined-page.js';
