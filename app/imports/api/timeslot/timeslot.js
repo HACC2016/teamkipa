@@ -1,5 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { moment } from 'meteor/momentjs:moment';
 
 /* eslint-disable object-shorthand */
 
@@ -33,7 +34,38 @@ TimeSlots.attachSchema(new SimpleSchema({
   // Each visitor is an object with fields visitorName, detainee Name, visitorID.
   visitors: {
     label: 'visitors',
-    type: [Object],
+    type: [String],
     optional: true,
   },
 }));
+
+// TimeSlot manipulation functions.
+
+/* Returns today in YYYY-MM-DD format, suitable for the day field. */
+export function thisDay() {
+  return moment().format('YYYY-MM-DD');
+}
+
+/**
+ * Returns a cursor to numDays number of timeslots, in row-major order, starting with this Day.
+ * @returns {Cursor}
+ */
+export function getTimeSlotsCursor(numDays) {
+  const endOfWeek = moment().add(numDays, 'days').format('YYYY-MM-DD');
+  return TimeSlots.find({ day: { $gte: thisDay(), $lte: endOfWeek } }, { sort: { key: 1 } });
+}
+
+/** Adds visitor to the visitors array for day and slot. */
+export function addVisitor(day, slot, visitor) {
+  TimeSlots.update({ day, slot }, { $push: { visitors: visitor } });
+}
+
+/** Returns the array of visitors associated with the day and slot. */
+export function getVisitors(day, slot) {
+  return TimeSlots.findOne({ day, slot }).visitors;
+}
+
+/** Removes visitor from the passed day and slot. */
+export function removeVisitor(day, slot, visitor) {
+  TimeSlots.update({ day, slot }, { $pull: { visitors: visitor } });
+}
