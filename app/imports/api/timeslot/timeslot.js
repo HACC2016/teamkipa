@@ -13,7 +13,7 @@ export const TimeSlots = new Mongo.Collection(timeSlots);
  * See: https://github.com/aldeed/meteor-autoform#affieldinput
  */
 TimeSlots.attachSchema(new SimpleSchema({
-  // Day indicates a day in YYYY-MM-DD format.
+  // Day is a string in YYYY-MM-DD format.
   day: {
     label: 'day',
     type: String,
@@ -25,21 +25,31 @@ TimeSlots.attachSchema(new SimpleSchema({
     type: String,
     optional: false,
   },
-  // Key simplifies sorting. It is the concatenation of slot+day.
+  // I think we can get rid of Key.
   key: {
     label: 'key',
     type: String,
     optional: false,
   },
-  // Each visitor is an object with fields visitorName, detainee Name, visitorID.
-  visitors: {
-    label: 'visitors',
+  // Indicates the number of current visits associated with this slot.
+  // Must be a number between 0 and 5.
+  // In the prototype, it is technically possible under race conditions to get more than 5 visits,
+  // But OCCC staff can always cancel an extra visit during the 24 hour freeze period.
+  // In production, we can add additional validation to further lower the odds of this happening.
+  numVisits: {
+    label: 'numVisits',
+    type: Number,
+    optional: false,
+  },
+  // VisitInfoList is a list of strings that get packed/unpacked to provide details on a visitor during this time slot.
+  visitInfoList: {
+    label: 'visitInfoList',
     type: [String],
     optional: true,
   },
 }));
 
-// TimeSlot manipulation functions.
+// Time manipulation functions for "days" and "slots".
 
 /* Returns today in YYYY-MM-DD format, suitable for the day field. */
 export function thisDay() {
@@ -65,31 +75,27 @@ export function endOfWeek() {
   return moment().add(6, 'days').format('YYYY-MM-DD');
 }
 
-/**
- * Returns a cursor to numDays number of timeslots, in row-major order, starting with this Day.
- * @returns {Cursor}
- */
-export function getTimeSlotsCursor(numDays) {
-  const lastDay = moment().add(numDays, 'days').format('YYYY-MM-DD');
-  return TimeSlots.find({ day: { $gte: thisDay(), $lte: lastDay } }, { sort: { key: 1 } });
-}
+// Query functions that return a cursor to a subset of TimeSlot documents.
 
 export function getTimeSlotRowData(slot) {
-  return TimeSlots.find({ slot, day: { $gte: thisDay(), $lte: endOfWeek() } }, { sort: { key: 1 } });
+  return TimeSlots.find({ slot, day: { $gte: thisDay(), $lte: endOfWeek() } }, { sort: { day: 1 } });
 }
 
-
-/** Adds visitor to the visitors array for day and slot. */
-export function addVisitor(day, slot, visitor) {
-  TimeSlots.update({ day, slot }, { $push: { visitors: visitor } });
+export function getAvailableTimeSlotsForDay(day) {
+  return TimeSlots.find({ day: day, numVisits: { $lt: 5 } });
 }
 
-/** Returns the array of visitors associated with the day and slot. */
-export function getVisitors(day, slot) {
-  return TimeSlots.findOne({ day, slot }).visitors;
+/** Adds visitInfo to the visitors array for day and slot. */
+export function addVisitInfo(day, slot, visitInfo) {
+  TimeSlots.update({ day, slot }, { $push: { visitInfoList: visitInfo }, $inc: { numVisits: 1 } });
+}
+
+/** Returns the array of VisitInfo strings associated with the day and slot. */
+export function getVisitInfoList(day, slot) {
+  return TimeSlots.findOne({ day, slot }).visitInfoList;
 }
 
 /** Removes visitor from the passed day and slot. */
-export function removeVisitor(day, slot, visitor) {
-  TimeSlots.update({ day, slot }, { $pull: { visitors: visitor } });
+export function removeVisitInfo(day, slot, visitInfo) {
+  TimeSlots.update({ day, slot }, { $pull: { visitorInfoList: visitInfo }, $inc: { numVisits: -1 } });
 }

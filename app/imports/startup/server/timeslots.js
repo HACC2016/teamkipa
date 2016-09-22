@@ -1,4 +1,4 @@
-import { TimeSlots, addVisitor, futureDay, dayRange } from '../../api/timeslot/timeslot.js';
+import { TimeSlots, addVisitInfo, futureDay, dayRange } from '../../api/timeslot/timeslot.js';
 import { _ } from 'meteor/underscore';
 
 
@@ -8,35 +8,55 @@ import { _ } from 'meteor/underscore';
  */
 const sampleTimeSlotData = [
   {
-    day: futureDay(0),
+    day: futureDay(3),
     slot: '0730',
-    visitor: 'Veronica',
+    visitInfo: 'Veronica1',
+  },
+  {
+    day: futureDay(3),
+    slot: '0730',
+    visitInfo: 'Veronica2',
+  },
+  {
+    day: futureDay(3),
+    slot: '0730',
+    visitInfo: 'Veronica3',
+  },
+  {
+    day: futureDay(3),
+    slot: '0730',
+    visitInfo: 'Veronica4',
+  },
+  {
+    day: futureDay(3),
+    slot: '0730',
+    visitInfo: 'Veronica5',
   },
   {
     day: futureDay(1),
     slot: '0830',
-    visitor: 'Velma',
+    visitInfo: 'Velma',
   },
   {
     day: futureDay(2),
     slot: '0930',
-    visitor: 'Violet',
+    visitInfo: 'Violet',
   },
   {
     day: futureDay(2),
     slot: '0930',
-    visitor: 'Vaden',
+    visitInfo: 'Vaden',
   },
   {
     day: futureDay(4),
     slot: '1030',
-    visitor: 'Verne',
+    visitInfo: 'Verne',
   },
 ];
 
 /** Add sample data. */
 function addSampleData() {
-  _.each(sampleTimeSlotData, (data) => addVisitor(data.day, data.slot, data.visitor));
+  _.each(sampleTimeSlotData, (data) => addVisitInfo(data.day, data.slot, data.visitInfo));
 }
 
 /** Initialize the TimeSlots collection if empty with time slots for the next 30 days, plus sample data.  */
@@ -48,7 +68,7 @@ function initializeTimeSlots() {
   if (TimeSlots.find().count() === 0) {
     _.each(days, function doDay(day) {
       _.each(slotNames, function doSlot(slot) {
-        TimeSlots.insert({ day, slot, key: `${slot}:${day}`, visitors: [] });
+        TimeSlots.insert({ day, slot, key: `${slot}:${day}`, visitInfoList: [], numVisits: 0 });
       });
     });
     addSampleData();

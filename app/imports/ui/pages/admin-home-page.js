@@ -15,12 +15,7 @@ Template.Admin_Home_Page.helpers({
     }
     return headers;
   },
-
-  sevenThirty: function row1() {
-    return getTimeSlotRowData('0730');
-  },
-
-  getSlotRow: function slotRow(slot) {
+  getSlotRow: function getSlotRow(slot) {
     return getTimeSlotRowData(slot);
   },
 });
