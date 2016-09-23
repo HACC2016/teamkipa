@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import { getvisitorfrommeteor } from '../../../imports/api/visitor/visitors';
+import { getVisitorFromID, Visitors } from '../../../imports/api/visitor/visitors';
 
 Template.Authorization_Pending_Page.onCreated(function onCreated() {
   // placeholder: typically you will put global subscriptions here if you remove the autopublish package.
@@ -7,21 +7,21 @@ Template.Authorization_Pending_Page.onCreated(function onCreated() {
 
 Template.Authorization_Pending_Page.helpers({
   detaineefirstname: () => {
-    const visitor = getvisitorfrommeteor();
+    const visitor = getVisitorFromID();
     if (typeof visitor !== 'undefined') {
       return visitor.detaineefirstname;
     }
     return '';
   },
   detaineelastname: () => {
-    const visitor = getvisitorfrommeteor();
+    const visitor = getVisitorFromID();
     if (typeof visitor !== 'undefined') {
       return visitor.detaineelastname;
     }
     return '';
   },
   allowtexts: () => {
-    const visitor = getvisitorfrommeteor();
+    const visitor = getVisitorFromID();
     if (typeof visitor !== 'undefined') {
       return visitor.allowtexts;
     }
@@ -30,5 +30,10 @@ Template.Authorization_Pending_Page.helpers({
 });
 
 Template.Authorization_Pending_Page.events({
-  // placeholder: if you have a form, handle the associated events here.
+  submit: (event) => {
+    event.preventDefault();
+    const visitor = getVisitorFromID();
+    const allowtexts = event.target.text_message_notification.checked;
+    Visitors.update({ _id: visitor._id }, { $set: { allowtexts } });
+  },
 });

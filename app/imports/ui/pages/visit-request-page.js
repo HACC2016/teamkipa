@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { moment } from 'meteor/momentjs:moment';
-import { getvisitorfromid } from '../../api/visitor/visitors';
+import { getVisitorFromID } from '../../api/visitor/visitors';
 import { addVisit } from '../../api/visit/visit.js';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
@@ -13,14 +13,14 @@ Template.Visit_Request_Page.helpers({
     return moment().add(numDays, 'days').format('ddd, M/DD');
   },
   detaineefirstname: () => {
-    const visitor = getvisitorfromid();
+    const visitor = getVisitorFromID();
     if (typeof visitor !== 'undefined') {
       return visitor.detaineefirstname;
     }
     return '';
   },
   detaineelastname: () => {
-    const visitor = getvisitorfromid();
+    const visitor = getVisitorFromID();
     if (typeof visitor !== 'undefined') {
       return visitor.detaineelastname;
     }
