@@ -76,6 +76,7 @@ if (Meteor.users.find().count() === 0) {
         // need to do something better than alert.
         console.log(err);
       } else {
+        console.log(`Created sample visitor ${v.firstname} ${v.lastname}`);
         userid = res;
         Visitors.update({ _id: id }, { $set: { userid } });
       }
@@ -90,8 +91,9 @@ if (!!Meteor.settings.defaultAdminAccount) {
       password: Meteor.settings.defaultAdminAccount.password,
     });
     Roles.addUsersToRoles(id, ['admin']);
+    console.log('Created admin user.');
   } else {
-    console.log('No default user!  Please invoke meteor with a settings file.');
+    console.log('No admin user!  Please invoke meteor with a settings file.');
   }
 }
 
