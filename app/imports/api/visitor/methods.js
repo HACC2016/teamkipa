@@ -27,7 +27,7 @@ Meteor.methods({
   'create.visitor'({ username, password }) {
     new SimpleSchema({
       username: { type: String },
-      password: { type: String }
+      password: { type: String },
     }).validate({ username, password });
 
     if (Meteor.users.find({ username }).count() === 0) {

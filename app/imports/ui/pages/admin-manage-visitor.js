@@ -60,10 +60,10 @@ Template.Admin_Manage_Visitor_Page.helpers({
     const visitor = Visitors.findOne({ _id: visitorId });
     if (typeof visitor !== 'undefined') {
       if (visitor.isfemale) {
-        return 'True';
+        return '(Female)';
       }
     }
-    return 'False';
+    return '';
   },
 });
 
