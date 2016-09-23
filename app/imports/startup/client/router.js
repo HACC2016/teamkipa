@@ -71,7 +71,7 @@ FlowRouter.route('/admin-home', {
   },
 });
 
-FlowRouter.route('/admin-manage-visitor', {
+FlowRouter.route('/admin-manage-visitor/:id', {
   name: 'Admin_Manage_Visitor_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Admin_Manage_Visitor_Page' });
