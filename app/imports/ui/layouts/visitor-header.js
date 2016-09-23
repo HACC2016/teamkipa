@@ -11,13 +11,13 @@ Template.Visitor_Header.onRendered(function enableDropDown() {
 
 Template.Visitor_Header.helpers({
   name: () => {
-    const userid = Meteor.userId();
-    const visitor = Visitors.findOne({ userid });
+    const userid = FlowRouter.getParam('id');
+    const visitor = Visitors.findOne({ _id: userid });
     return `${visitor.firstname} ${visitor.lastname}`;
   },
   phonenumber: () => {
-    const userid = Meteor.userId();
-    const visitor = Visitors.findOne({ userid });
+    const userid = FlowRouter.getParam('id');
+    const visitor = Visitors.findOne({ _id: userid });
     return visitor.phonenumber;
   },
 });

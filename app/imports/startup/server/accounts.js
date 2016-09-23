@@ -6,20 +6,21 @@ import '../../../imports/api/visitor/methods';
 
 /* eslint-disable no-console */
 
-const visitors = [{
-  firstname: 'Margo',
-  lastname: 'Casey',
-  phonenumber: '808-514-9157',
-  allowtexts: false,
-  detaineefirstname: 'Kameron',
-  detaineelastname: 'Loyd',
-  detaineestateid: 'A3319405',
-  state: 'authorized',
-  dateofbirth: '7/12/1927',
-  userid: 0,
-  pin: '5836',
-  isfemale: false,
-},
+const visitors = [
+  {
+    firstname: 'Margo',
+    lastname: 'Casey',
+    phonenumber: '808-514-9157',
+    allowtexts: false,
+    detaineefirstname: 'Kameron',
+    detaineelastname: 'Loyd',
+    detaineestateid: 'A3319405',
+    state: 'authorized',
+    dateofbirth: '7/12/1927',
+    userid: 0,
+    pin: '5836',
+    isfemale: false,
+  },
   {
     firstname: 'Rue',
     lastname: 'Christabel',
