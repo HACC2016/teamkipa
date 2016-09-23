@@ -31,6 +31,7 @@ Template.Authorization_Pending_Page.helpers({
 
 Template.Authorization_Pending_Page.events({
   submit: (event) => {
+    event.preventDefault();
     const visitor = getVisitorFromID();
     const allowtexts = event.target.text_message_notification.checked;
     Visitors.update({ _id: visitor._id }, { $set: { allowtexts } });
