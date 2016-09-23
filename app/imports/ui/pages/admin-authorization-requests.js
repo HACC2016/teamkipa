@@ -18,52 +18,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { Visitors } from '../../../imports/api/visitor/visitors';
 
-const getvisitor = () => {
-  const userid = Meteor.userId();
-  return Visitors.findOne({ userid });
-};
-
-Template.Visitor_Home_Page.helpers({
-  isAuthPending: () => {
-    const visitor = getvisitor();
-    if (typeof visitor !== 'undefined') {
-      return visitor.state === 'unauthorized';
-    }
-    return false;
-  },
-  isAuthorized: () => {
-    const visitor = getvisitor();
-    if (typeof visitor !== 'undefined') {
-      return visitor.state === 'authorized';
-    }
-    return false;
-  },
-  isDeclined: () => {
-    const visitor = getvisitor();
-    if (typeof visitor !== 'undefined') {
-      return visitor.state === 'declined';
-    }
-    return false;
+Template.Admin_Authorization_Requests.helpers({
+  authorizations: () => {
+    return Visitors.find({ state: 'unauthorized' });
   },
 });
 
-Template.Visitor_Home_Page.events({
+Template.Admin_Authorization_Requests.events({
   // add your events here
 });
 
-Template.Visitor_Home_Page.onCreated(function () {
+Template.Admin_Authorization_Requests.onCreated(function () {
   // add your statement here
 });
 
-Template.Visitor_Home_Page.onRendered(function () {
+Template.Admin_Authorization_Requests.onRendered(function () {
   // add your statement here
 });
 
-Template.Visitor_Home_Page.onDestroyed(function () {
+Template.Admin_Authorization_Requests.onDestroyed(function () {
   // add your statement here
 });
 

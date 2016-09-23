@@ -33,3 +33,6 @@ import './visit-reservation-page.js';
 import './visitor-home-page.html';
 import './visitor-home-page.js';
 
+import './admin-authorization-requests.html';
+import './admin-authorization-requests.js';
+

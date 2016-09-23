@@ -18,13 +18,26 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 /* eslint-disable object-shorthand */
 
 export const visitors = 'Visitors';  // avoid typos, this string occurs three times.
+
 export const Visitors = new Mongo.Collection(visitors);
+
+export const getvisitorfrommeteor = () => {
+  const userid = Meteor.userId();
+  return Visitors.findOne({ userid });
+};
+
+export const getvisitorfromid = () => {
+  const id = FlowRouter.getParam('id');
+  return Visitors.findOne({ _id: id });
+};
 
 /**
  * Create the schema for Visitors
@@ -83,7 +96,12 @@ Visitors.attachSchema(new SimpleSchema({
     optional: false,
     max: 20,
   },
+  // Valid states are 'unauthorized', 'authorized', 'visitpending', 'declined'
   state: {
+    type: String,
+    optional: true,
+  },
+  reason: {
     type: String,
     optional: true,
   },
