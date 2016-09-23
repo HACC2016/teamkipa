@@ -1,17 +1,17 @@
 <template name="Admin_Header">
-    <div class="ui top fixed borderless menu">
-        <div class="ui container">
-            <span class="item"><img src="/images/seal.png"></span>
-            <span class="item"><h2>OCCC Visitation Administration</h2></span>
-            {{#if currentUser}}
-                {{#if isInRole 'visitor'}}
-                    <a class="item">{{name}}&nbsp;({{phonenumber}})</a>
-                {{/if}}
-                <button class="ui primary button logout right item">Logout</button>
-            {{/if}}
-        </div>
-    </div>
+  <div class="ui top fixed borderless menu">
     <div class="ui container">
-        <hr>
+      <span class="item"><img src="/images/seal.png"></span>
+      <span class="item"><h2>Admin</h2></span>
+      <a class="{{ isActiveRoute 'Admin_Week_Page'}} item" href="{{ pathFor 'Admin_Week_Page' }}">Week </a>
+      <a class="{{ isActiveRoute 'Admin_Authorization_Requests_Page'}} item"
+         href="{{ pathFor 'Admin_Authorization_Requests_Page' }}">Authorize </a>
+
+      <button class="ui primary button logout right item">Logout</button>
+
     </div>
+  </div>
+  <div class="ui container">
+    <hr>
+  </div>
 </template>

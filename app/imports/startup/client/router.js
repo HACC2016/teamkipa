@@ -64,10 +64,17 @@ FlowRouter.route('/visit-reservation', {
   },
 });
 
-FlowRouter.route('/admin-home', {
-  name: 'Admin_Home_Page',
+FlowRouter.route('/admin-week', {
+  name: 'Admin_Week_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Admin_Home_Page' });
+    BlazeLayout.render('App_Body', { main: 'Admin_Week_Page' });
+  },
+});
+
+FlowRouter.route('/admin-authorization', {
+  name: 'Admin_Authorization_Requests_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Admin_Authorization_Requests_Page' });
   },
 });
 

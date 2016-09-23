@@ -21,25 +21,25 @@
 import { Template } from 'meteor/templating';
 import { Visitors } from '../../../imports/api/visitor/visitors';
 
-Template.Admin_Authorization_Requests.helpers({
+Template.Admin_Authorization_Requests_Page.helpers({
   authorizations: () => {
     return Visitors.find({ state: 'unauthorized' });
   },
 });
 
-Template.Admin_Authorization_Requests.events({
+Template.Admin_Authorization_Requests_Page.events({
   // add your events here
 });
 
-Template.Admin_Authorization_Requests.onCreated(function () {
+Template.Admin_Authorization_Requests_Page.onCreated(function () {
   // add your statement here
 });
 
-Template.Admin_Authorization_Requests.onRendered(function () {
+Template.Admin_Authorization_Requests_Page.onRendered(function () {
   // add your statement here
 });
 
-Template.Admin_Authorization_Requests.onDestroyed(function () {
+Template.Admin_Authorization_Requests_Page.onDestroyed(function () {
   // add your statement here
 });
 

@@ -10,16 +10,6 @@ Template.Admin_Header.onRendered(function enableDropDown() {
 });
 
 Template.Admin_Header.helpers({
-  name: () => {
-    const userid = Meteor.userId();
-    const visitor = Visitors.findOne({ userid });
-    return `${visitor.firstname} ${visitor.lastname}`;
-  },
-  phonenumber: () => {
-    const userid = Meteor.userId();
-    const visitor = Visitors.findOne({ userid });
-    return visitor.phonenumber;
-  },
 });
 Template.Admin_Header.events({
   'click .logout': (event) => {
