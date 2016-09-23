@@ -29,12 +29,12 @@ export const visitors = 'Visitors';  // avoid typos, this string occurs three ti
 
 export const Visitors = new Mongo.Collection(visitors);
 
-export const getvisitorfrommeteor = () => {
+export const getVisitorFromMeteor = () => {
   const userid = Meteor.userId();
   return Visitors.findOne({ userid });
 };
 
-export const getvisitorfromid = () => {
+export const getVisitorFromID = () => {
   const id = FlowRouter.getParam('id');
   return Visitors.findOne({ _id: id });
 };
