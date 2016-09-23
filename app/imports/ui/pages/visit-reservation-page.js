@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { getVisitorFromID, Visitors } from '../../../imports/api/visitor/visitors';
-import { Visits } from '../../../imports/api/visit/visit';
+import { Visits, getVisitTimeString } from '../../../imports/api/visit/visit';
 
 Template.Visit_Reservation_Page.onCreated(function onCreated() {
   // placeholder: typically you will put global subscriptions here if you remove the autopublish package.
@@ -32,7 +32,7 @@ Template.Visit_Reservation_Page.helpers({
   visitDate: () => {
     const visitorID = FlowRouter.getParam('id');
     const visit = Visits.findOne({ visitorID });
-    return visit.day;
+    return getVisitTimeString(visit.day, visit.slot);
   },
   visitTime: () => {
     const visitorID = FlowRouter.getParam('id');
