@@ -79,5 +79,5 @@ export function getTimeSlotVisits(day, slot) {
 
 /** Determine if a visitor has a pending visit in the next seven days. */
 export function hasPendingVisit(visitorID) {
-  Visits.findOne(visitorID, { $gte: { day: thisDay() } });
+  return Visits.findOne({ visitorID }, { $gte: { day: thisDay() } });
 }
