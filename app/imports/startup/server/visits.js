@@ -1,4 +1,4 @@
-import { slots, futureDay, addVisit, deleteAllVisits } from '../../api/visit/visit.js';
+import { slots, futureDay, addVisit, deleteAllVisits, hasPendingVisit } from '../../api/visit/visit.js';
 import { Visitors } from '../../api/visitor/visitors.js';
 
 
