@@ -50,7 +50,7 @@ FlowRouter.route('/authorization-declined', {
   },
 });
 
-FlowRouter.route('/request-visit', {
+FlowRouter.route('/request-visit/:id', {
   name: 'Visit_Request_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Visit_Request_Page' });

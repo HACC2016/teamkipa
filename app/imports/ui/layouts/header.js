@@ -10,10 +10,10 @@ Template.Header.onRendered(function enableDropDown() {
 });
 
 Template.Header.helpers({
-  firstname: () => {
+  name: () => {
     const userid = Meteor.userId();
     const visitor = Visitors.findOne({ userid });
-    return visitor.firstname;
+    return `${visitor.firstname} ${visitor.lastname}`;
   },
   phonenumber: () => {
     const userid = Meteor.userId();
@@ -27,7 +27,7 @@ Template.Header.events({
 
     Meteor.logout((error) => {
       if (error) {
-        console.log('ERROR: ' + error.reason);
+        console.log(`ERROR: ${error.reason}`);
       }
     });
     FlowRouter.go('/');
