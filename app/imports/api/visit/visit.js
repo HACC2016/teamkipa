@@ -81,3 +81,9 @@ export function getTimeSlotVisits(day, slot) {
 export function hasPendingVisit(visitorID) {
   return Visits.findOne({ visitorID }, { $gte: { day: thisDay() } });
 }
+
+/** Returns the day and slot formatted like: 'Friday, September 23rd, 8:30 am' */
+export function getVisitTimeString(day, slot) {
+  const time = moment(`${day}-${slot}`, 'YYYY-MM-DD-HHmm');
+  return time.format('dddd, MMMM Do, h:mm a');
+}
