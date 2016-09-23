@@ -67,6 +67,11 @@ export function getVisitor(visitorID) {
   return Visitors.findOne(visitorID);
 }
 
+/* Delete all visits. */
+export function deleteAllVisits() {
+  Visits.remove({});
+}
+
 /* Return a cursor to the Visits associated with a time and a day. */
 export function getTimeSlotVisits(day, slot) {
   return Visits.find({ day, slot });

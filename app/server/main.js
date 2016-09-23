@@ -1,5 +1,5 @@
 import '/imports/startup/server';
 import '/imports/startup/both';
-import '/imports/api/timeslot';
+import '/imports/api/visit';
 import '/imports/api/visitor';
 

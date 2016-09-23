@@ -7,4 +7,4 @@ import '/imports/ui/components';
 import '/imports/ui/stylesheets/style.css';
 
 
-import '/imports/api/timeslot';
+import '/imports/api/visit';
