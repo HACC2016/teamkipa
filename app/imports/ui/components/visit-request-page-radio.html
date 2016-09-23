@@ -1,7 +1,7 @@
 <template name="Visit_Request_Page_Radio">
   {{#if visitAvailable dayNum slot }}
   <div class="ui radio checkbox">
-    <input type="radio" name="request-date" id="{{ getID dayNum slot }}" value="{{ getValue dayNum slot }}">
+    <input type="radio" name="requestdate" id="{{ getID dayNum slot }}" value="{{ getValue dayNum slot }}">
     <label>{{ prettyPrintLabel slot }}</label>
   </div>
   {{/if}}

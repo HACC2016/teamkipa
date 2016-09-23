@@ -1,15 +1,14 @@
 <template name="Header">
     <div class="ui top fixed borderless menu">
         <div class="ui container">
-            <a class="item" href="#"><img src="/images/seal.png"></a>
-            <a class="item" href="#"><h2>OCCC Visitation</h2></a>
+            <span class="item"><img src="/images/seal.png"></span>
+            <span class="item"><h2>OCCC Visitation</h2></span>
             {{#if currentUser}}
                 {{#if isInRole 'visitor'}}
-                    <a class="item">Welcome {{firstname}}&nbsp;&nbsp; {{phonenumber}}</a>
+                    <a class="item">{{name}}&nbsp;({{phonenumber}})</a>
                 {{/if}}
                 <button class="ui primary button logout right item">Logout</button>
             {{/if}}
-            <a class="right item" href="/site-map">Site Map</a>
         </div>
     </div>
     <div class="ui container">
