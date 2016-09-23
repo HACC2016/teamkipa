@@ -1,11 +1,11 @@
 import { Template } from 'meteor/templating';
 import { moment } from 'meteor/momentjs:moment';
 
-Template.Admin_Home_Page.onCreated(function onCreated() {
+Template.Admin_Week_Page.onCreated(function onCreated() {
   // placeholder: typically you will put global subscriptions here if you remove the autopublish package.
 });
 
-Template.Admin_Home_Page.helpers({
+Template.Admin_Week_Page.helpers({
   // Return the seven header strings starting with today.
   scheduleHeaders: function scheduleHeaders() {
     const headers = [];
@@ -16,6 +16,6 @@ Template.Admin_Home_Page.helpers({
   },
 });
 
-Template.Admin_Home_Page.events({
+Template.Admin_Week_Page.events({
   // placeholder: if you have a form, handle the associated events here.
 });

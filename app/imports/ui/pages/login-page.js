@@ -24,7 +24,7 @@ Template.Login_Page.events({
       } else {
         const userId = Meteor.userId();
         if (Roles.userIsInRole(userId, ['admin'])) {
-          FlowRouter.go('/admin-home');
+          FlowRouter.go('/admin-week');
         } else {
           const visitor = getvisitorfrommeteor()._id;
           FlowRouter.go(`/visitor-home/${visitor}`);
