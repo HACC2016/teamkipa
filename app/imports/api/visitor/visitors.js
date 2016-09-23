@@ -29,7 +29,7 @@ export const visitors = 'Visitors';  // avoid typos, this string occurs three ti
 
 export const Visitors = new Mongo.Collection(visitors);
 
-export const getvisitorfrommeteor = () => {
+export function getvisitorfrommeteor() {
   const userid = Meteor.userId();
   return Visitors.findOne({ userid });
 };
