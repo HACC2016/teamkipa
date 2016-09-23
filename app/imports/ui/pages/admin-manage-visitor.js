@@ -10,40 +10,58 @@ Template.Admin_Manage_Visitor_Page.helpers({
   firstname: () => {
     const visitorId = FlowRouter.getParam('id');
     const visitor = Visitors.findOne({ _id: visitorId });
-    return visitor.firstname;
+    if (typeof visitor !== 'undefined') {
+      return visitor.firstname;
+    }
+    return '';
   },
   lastname: () => {
     const visitorId = FlowRouter.getParam('id');
     const visitor = Visitors.findOne({ _id: visitorId });
-    return visitor.lastname;
+    if (typeof visitor !== 'undefined') {
+      return visitor.lastname;
+    }
+    return '';
   },
   phonenumber: () => {
     const visitorId = FlowRouter.getParam('id');
     const visitor = Visitors.findOne({ _id: visitorId });
-    console.log(visitor);
-    return visitor.phonenumber;
+    if (typeof visitor !== 'undefined') {
+      return visitor.phonenumber;
+    }
+    return '';
   },
   dateofbirth: () => {
     const visitorId = FlowRouter.getParam('id');
     const visitor = Visitors.findOne({ _id: visitorId });
-    return visitor.dateofbirth;
+    if (typeof visitor !== 'undefined') {
+      return visitor.dateofbirth;
+    }
+    return '';
   },
   detaineefirstname: () => {
     const visitorId = FlowRouter.getParam('id');
     const visitor = Visitors.findOne({ _id: visitorId });
-    return visitor.detaineefirstname;
+    if (typeof visitor !== 'undefined') {
+      return visitor.detaineefirstname;
+    }
+    return '';
   },
   detaineelastname: () => {
     const visitorId = FlowRouter.getParam('id');
     const visitor = Visitors.findOne({ _id: visitorId });
-    return visitor.detaineelastname;
+    if (typeof visitor !== 'undefined') {
+      return visitor.detaineelastname;
+    }
+    return '';
   },
   detaineeisfemale: () => {
     const visitorId = FlowRouter.getParam('id');
     const visitor = Visitors.findOne({ _id: visitorId });
-    console.log(typeof visitor.isfemale);
-    if (visitor.isfemale) {
-      return 'True';
+    if (typeof visitor !== 'undefined') {
+      if (visitor.isfemale) {
+        return 'True';
+      }
     }
     return 'False';
   },
