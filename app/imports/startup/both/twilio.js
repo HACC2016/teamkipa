@@ -20,7 +20,7 @@
 
 import { Meteor } from 'meteor/meteor';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import HTTP from 'http';
+import { HTTP } from 'meteor/http';
 
 /**
  * NOTE: For the sendTextMessage to work, we need to set the environment variables:
@@ -29,6 +29,7 @@ import HTTP from 'http';
  */
 Meteor.methods({
   'sendTextMessage'(phoneNumber, outgoingMessage) {
+    console.log('sendTextMessage', phoneNumber, outgoingMessage);
     new SimpleSchema({
       phoneNumber: { type: String },
       outgoingMessage: { type: String },

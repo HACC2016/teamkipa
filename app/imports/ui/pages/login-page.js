@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Roles } from 'meteor/alanning:roles';
+import { getvisitorfrommeteor } from '../../../imports/api/visitor/visitors';
 
 Template.Login_Page.onCreated(function onCreated() {
   // placeholder: typically you will put global subscriptions here if you remove the autopublish package.
@@ -25,7 +26,8 @@ Template.Login_Page.events({
         if (Roles.userIsInRole(userId, ['admin'])) {
           FlowRouter.go('/admin-home');
         } else {
-          FlowRouter.go('/visitor');
+          const visitor = getvisitorfrommeteor()._id;
+          FlowRouter.go(`/visitor-home/${visitor}`);
         }
       }
     });
