@@ -1,16 +1,17 @@
 import { Template } from 'meteor/templating';
-import { getVisitorLastName, getVisitorId } from '../../api/timeslot/timeslot.js';
+import { futureDay, getTimeSlotVisits, getVisitor } from '../../api/visit/visit.js';
 
 Template.Admin_Home_Page_Table_Cell.onCreated(function onCreated() {
   // placeholder: typically you will put global subscriptions here if you remove the autopublish package.
 });
 
 Template.Admin_Home_Page_Table_Cell.helpers({
-  getID: function getID(visitInfo) {
-    return getVisitorId(visitInfo);
+  visits: function visits(dayNum, slot) {
+    const day = futureDay(dayNum);
+    return getTimeSlotVisits(day, slot);
   },
-  getName: function getName(visitInfo) {
-    return getVisitorLastName(visitInfo);
+  getLastName: function getLastName(visit) {
+    return getVisitor(visit.visitorID).lastname;
   },
 });
 

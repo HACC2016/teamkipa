@@ -1,6 +1,5 @@
 import { Template } from 'meteor/templating';
 import { moment } from 'meteor/momentjs:moment';
-import { getTimeSlotRowData } from '../../api/timeslot/timeslot.js';
 
 Template.Admin_Home_Page.onCreated(function onCreated() {
   // placeholder: typically you will put global subscriptions here if you remove the autopublish package.
@@ -14,9 +13,6 @@ Template.Admin_Home_Page.helpers({
       headers.push(moment().add(i, 'days').format('ddd, M/DD'));
     }
     return headers;
-  },
-  getSlotRow: function getSlotRow(slot) {
-    return getTimeSlotRowData(slot);
   },
 });
 

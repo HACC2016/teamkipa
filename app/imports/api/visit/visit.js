@@ -1,6 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { moment } from 'meteor/momentjs:moment';
+import { Visitors } from '../visitor/visitors.js';
 
 /* eslint-disable object-shorthand */
 
@@ -50,12 +51,20 @@ Visits.attachSchema(new SimpleSchema({
   },
 }));
 
+/* Add a new Visit to this collection. */
 export function addVisit(day, slot, visitorID) {
   Visits.insert({ day, slot, visitorID });
 }
 
+/* Remove all visits associated with this visitorID. */
 export function removeVisit(visitorID) {
   Visits.remove({ visitorID });
+}
+
+/* Return the Visitor object associated with visitorID. */
+export function getVisitor(visitorID) {
+  // visitorID is the _id for the Visitor collection.
+  return Visitors.findOne(visitorID);
 }
 
 /* Return a cursor to the Visits associated with a time and a day. */
