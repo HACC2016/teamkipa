@@ -1,8 +1,8 @@
-<template name="Header">
+<template name="Admin_Header">
     <div class="ui top fixed borderless menu">
         <div class="ui container">
             <span class="item"><img src="/images/seal.png"></span>
-            <span class="item"><h2>OCCC Visitation</h2></span>
+            <span class="item"><h2>OCCC Visitation Administration</h2></span>
             {{#if currentUser}}
                 {{#if isInRole 'visitor'}}
                     <a class="item">{{name}}&nbsp;({{phonenumber}})</a>
