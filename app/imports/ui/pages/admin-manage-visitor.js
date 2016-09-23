@@ -76,7 +76,7 @@ Template.Admin_Manage_Visitor_Page.events({
         const message = `From OCCC Visitation, ${visitor.firstname} you have been approved to visit ${visitor.detaineefirstname} ${visitor.detaineelastname}`;
         Meteor.call('sendTextMessage', visitor.phonenumber, message);
       }
-      FlowRouter.go('/admin-home');
+      FlowRouter.go('/admin-authorization');
     }
   },
   'click #revoke': (event) => {
@@ -84,7 +84,7 @@ Template.Admin_Manage_Visitor_Page.events({
     const visitor = getvisitor();
     if (typeof visitor !== 'undefined') {
       Visitors.update({ _id: visitor._id }, { $set: { state: 'declined' } });
-      FlowRouter.go('/admin-home');
+      FlowRouter.go('/admin-authorization');
     }
   },
 });
