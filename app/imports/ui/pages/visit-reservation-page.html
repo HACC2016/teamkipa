@@ -4,15 +4,20 @@
 
     <h3>Visit reservation</h3>
 
-    <p>You have a reservation to visit Joe Doe on Saturday, October 5, at 12:30pm.</p>
+    <p>You have a reservation to visit {{detaineeFirstName}} {{detaineeLastName}} on {{visitDate}}, at {{visitTime}}.</p>
 
-    <form class="ui form visit-cancel-form">
+    <form class="ui form visit-update-form">
       <div class="ui stackable grid">
 
         <div class="eight wide middle aligned column">
           <div class="field">
             <div class="ui checkbox">
-              <input type="checkbox" name="text-message-notification" id="text-message-notification" checked="checked">
+              {{#if allowtexts}}
+                <input type="checkbox" name="text_message_notification" id="text-message-notification"
+                       checked="checked">
+              {{else}}
+                <input type="checkbox" name="text_message_notification" id="text-message-notification">
+              {{/if}}
               <label>Send text message reminder on the day of the visit.</label>
             </div>
           </div>
@@ -28,7 +33,7 @@
 
     <form class="ui form visit-cancel-form">
       <div class="field">
-        <button class="ui primary button" type="submit">Cancel Visit</button>
+        <button class="ui primary button" type="submit2" id="cancel">Cancel Visit</button>
       </div>
     </form>
 

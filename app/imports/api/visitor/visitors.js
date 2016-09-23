@@ -29,15 +29,15 @@ export const visitors = 'Visitors';  // avoid typos, this string occurs three ti
 
 export const Visitors = new Mongo.Collection(visitors);
 
-export function getvisitorfrommeteor() {
+export function getVisitorFromMeteor() {
   const userid = Meteor.userId();
   return Visitors.findOne({ userid });
-};
+}
 
-export const getvisitorfromid = () => {
+export function getVisitorFromID() {
   const id = FlowRouter.getParam('id');
   return Visitors.findOne({ _id: id });
-};
+}
 
 /**
  * Create the schema for Visitors
