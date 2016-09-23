@@ -1,34 +1,38 @@
 <template name="Admin_Manage_Visitor_Page">
 
-  <div style="padding-top: 10px" class="ui text container">
+  {{#if Template.subscriptionsReady}}
+    <div style="padding-top: 10px" class="ui text container">
 
-    <h3>Manage Visitor</h3>
+      <h3>Manage Visitor</h3>
 
-    <p>Visitor Name: Jane Doe</p>
-    <p>Phone Number: 808-444-5555</p>
-    <p>Date of Birth: 4/24/1990</p>
-    <p>Detainee: Joe Doe</p>
-    <p>Detainee is female: False</p>
+      <p>Visitor Name: {{firstname}} {{lastname}}</p>
+      <p>Phone Number: {{phonenumber}}</p>
+      <p>Date of Birth: {{dateofbirth}}</p>
+      <p>Detainee: {{detaineefirstname}} {{detaineelastname}}</p>
+      <p>Detainee is female: {{detaineeisfemale}}</p>
 
 
-    <form class="ui form manage-visitor-form">
+      <form class="ui form manage-visitor-form">
 
-      <div class="ui equal width grid">
-        <div class="column">
-          <button class="fluid ui primary button" type="submit">Authorize <br /> visitation</button>
+        <div class="ui equal width grid">
+          <div class="column">
+            <button class="fluid ui primary button" type="submit">Authorize <br/> visitation</button>
+          </div>
+          <div class="column">
+            <button class="fluid ui primary button" type="submit">Revoke <br/>visitation</button>
+          </div>
+          <div class="column">
+            <button class="fluid ui primary button" type="submit">Edit <br/>data</button>
+          </div>
+          <div class="column">
+            <button class="fluid ui primary button" type="submit">Cancel <br/>reservation</button>
+          </div>
         </div>
-        <div class="column">
-          <button class="fluid ui primary button" type="submit">Revoke <br />visitation</button>
-        </div>
-        <div class="column">
-          <button class="fluid ui primary button" type="submit">Edit <br />data</button>
-        </div>
-        <div class="column">
-          <button class="fluid ui primary button" type="submit">Cancel <br />reservation</button>
-        </div>
-      </div>
-    </form>
+      </form>
 
 
-  </div>
+    </div>
+  {{else}}
+    {{>loading}}
+  {{/if}}
 </template>
