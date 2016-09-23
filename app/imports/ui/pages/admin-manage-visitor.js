@@ -59,10 +59,10 @@ Template.Admin_Manage_Visitor_Page.helpers({
     const visitor = getvisitor();
     if (typeof visitor !== 'undefined') {
       if (visitor.isfemale) {
-        return 'True';
+        return '(Female)';
       }
     }
-    return 'False';
+    return '';
   },
 });
 

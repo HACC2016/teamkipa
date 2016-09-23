@@ -75,6 +75,25 @@ export function endOfWeek() {
   return moment().add(6, 'days').format('YYYY-MM-DD');
 }
 
+//  VisitInfo Data structure.
+
+export function makeVisitInfo(visitorID, firstName, lastName) {
+  const visitInfo = [visitorID, firstName, lastName];
+  return visitInfo.join(' ');
+}
+
+export function getVisitorId(visitInfo) {
+  return visitInfo.split(' ')[0];
+}
+
+export function getVisitorFirstName(visitInfo) {
+  return visitInfo.split(' ')[1];
+}
+
+export function getVisitorLastName(visitInfo) {
+  return visitInfo.split(' ')[2];
+}
+
 // Query functions that return a cursor to a subset of TimeSlot documents.
 
 export function getTimeSlotRowData(slot) {
@@ -85,10 +104,16 @@ export function getAvailableTimeSlotsForDay(day) {
   return TimeSlots.find({ day: day, numVisits: { $lt: 5 } });
 }
 
-/** Adds visitInfo to the visitors array for day and slot. */
+/** Adds visitInfo to the visitInfoList array for day and slot. */
 export function addVisitInfo(day, slot, visitInfo) {
   TimeSlots.update({ day, slot }, { $push: { visitInfoList: visitInfo }, $inc: { numVisits: 1 } });
 }
+
+export function addVisitorToTimeSlot(day, slot, visitor) {
+  const visitInfo = makeVisitInfo(visitor._id, visitor.firstname, visitor.lastname);
+  addVisitInfo(day, slot, visitInfo);
+}
+
 
 /** Returns the array of VisitInfo strings associated with the day and slot. */
 export function getVisitInfoList(day, slot) {
@@ -97,5 +122,16 @@ export function getVisitInfoList(day, slot) {
 
 /** Removes visitor from the passed day and slot. */
 export function removeVisitInfo(day, slot, visitInfo) {
-  TimeSlots.update({ day, slot }, { $pull: { visitorInfoList: visitInfo }, $inc: { numVisits: -1 } });
+  TimeSlots.update({ day, slot }, { $pull: { visitInfoList: visitInfo }, $inc: { numVisits: -1 } });
+}
+
+export function clearVisitInfo(day, slot) {
+  TimeSlots.update({ day, slot }, { $set: { visitInfoList: [], numVisits: 0 } });
+}
+
+//   VisitorId functions.
+
+/** Determine if a visitor has a pending visit in the next seven days. */
+export function hasPendingVisit(visitorID) {
+
 }

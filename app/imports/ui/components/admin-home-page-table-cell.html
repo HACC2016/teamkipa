@@ -1,8 +1,8 @@
 <template name="Admin_Home_Page_Table_Cell">
   <td>
     <ol class="schedule-cell">
-      {{#each visitor in visitInfoList}}
-      <li><a href="/admin-manage-visitor?visitorID={{getID visitor}}">{{getName visitor}}</a></li>
+      {{#each visitInfo in visitInfoList}}
+      <li><a href="/admin-manage-visitor/{{getID visitInfo}}">{{getName visitInfo}}</a></li>
       {{/each}}
     </ol>
   </td>

@@ -92,8 +92,6 @@ if (!!Meteor.settings.defaultAdminAccount) {
     });
     Roles.addUsersToRoles(id, ['admin']);
     console.log('Created admin user.');
-  } else {
-    console.log('No admin user!  Please invoke meteor with a settings file.');
   }
 }
 
