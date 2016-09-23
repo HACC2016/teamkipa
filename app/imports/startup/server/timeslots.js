@@ -72,7 +72,7 @@ function initializeTimeSlots() {
       });
     });
     addSampleData();
-    console.log('TimeSlot Collection initialized and sample data now added.');
+    console.log('Created timeslots and added sample visits.');
   }
 }
 

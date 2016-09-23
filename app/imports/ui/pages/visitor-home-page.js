@@ -23,7 +23,7 @@ import { Template } from 'meteor/templating';
 import { Visitors } from '../../../imports/api/visitor/visitors';
 
 
-Template.visitor.helpers({
+Template.Visitor_Home_Page.helpers({
   isAuthPending: () => {
     const userid = Meteor.userId();
     const visitor = Visitors.findOne({ userid });
@@ -31,19 +31,19 @@ Template.visitor.helpers({
   },
 });
 
-Template.visitor.events({
+Template.Visitor_Home_Page.events({
   // add your events here
 });
 
-Template.visitor.onCreated(function () {
+Template.Visitor_Home_Page.onCreated(function () {
   // add your statement here
 });
 
-Template.visitor.onRendered(function () {
+Template.Visitor_Home_Page.onRendered(function () {
   // add your statement here
 });
 
-Template.visitor.onDestroyed(function () {
+Template.Visitor_Home_Page.onDestroyed(function () {
   // add your statement here
 });
 
