@@ -20,7 +20,9 @@
 
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Visitors } from '../../../imports/api/visitor/visitors';
+import { hasPendingVisit } from '../../../imports/api/visit/visit';
 
 const getvisitor = () => {
   const userid = Meteor.userId();
@@ -48,6 +50,10 @@ Template.Visitor_Home_Page.helpers({
       return visitor.state === 'declined';
     }
     return false;
+  },
+  hasPendingVisit: () => {
+    const visitorID = FlowRouter.getParam('id');
+    return hasPendingVisit(visitorID);
   },
 });
 

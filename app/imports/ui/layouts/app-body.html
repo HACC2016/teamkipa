@@ -1,5 +1,9 @@
 <template name="App_Body">
-  {{> Header}}
+  {{#if isInRole 'admin'}}
+    {{> Admin_Header}}
+  {{else}}
+    {{> Visitor_Header}}
+  {{/if}}
   {{>Template.dynamic template=main}}
   {{> Footer}}
 </template>

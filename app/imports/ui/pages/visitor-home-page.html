@@ -21,10 +21,15 @@
   {{#if Template.subscriptionsReady}}
     {{#if isAuthPending}}
       {{>Authorization_Pending_Page}}
-    {{/if}}
-    {{#if isAuthorized}}
-      <!--check on have pending visit-->
-      {{> Visit_Request_Page}}
+    {{else}}
+      {{#if isAuthorized}}
+        <!--check on have pending visit-->
+        {{#if hasPendingVisit}}
+          {{> Visit_Reservation_Page}}
+        {{else}}
+          {{> Visit_Request_Page}}
+        {{/if}}
+      {{/if}}
     {{/if}}
     {{#if isDeclined}}
       {{>Authorization_Declined_Page}}
