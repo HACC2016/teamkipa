@@ -17,19 +17,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see http://www.gnu.org/licenses/.
  -->
-<template name="Visitor_Home_Page">
-  {{#if Template.subscriptionsReady}}
-    {{#if isAuthPending}}
-      {{>Authorization_Pending_Page}}
-    {{/if}}
-    {{#if isAuthorized}}
-      <!--check on have pending visit-->
-      {{> Visit_Request_Page}}
-    {{/if}}
-    {{#if isDeclined}}
-      {{>Authorization_Declined_Page}}
-    {{/if}}
-  {{else}}
-    {{>loading}}
-  {{/if}}
+<template name="Admin_Authorization_Requests">
+  <h3>Authorization Requests</h3>
+  <div style="height:200px; overflow-y: scroll;">
+    <table class="ui basic compact table">
+      <tbody>
+      {{#each authorizations}}
+        <tr>
+          <td><a href="/admin-manage-visitor/{{_id}}">{{firstname}}&nbsp;{{lastname}}</a></td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
 </template>
