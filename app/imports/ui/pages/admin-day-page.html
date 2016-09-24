@@ -1,0 +1,121 @@
+<template name="Admin_Day_Page">
+
+  <div style="padding-top: 10px" class="ui container">
+
+    <h3>Schedule for {{scheduleDay}}</h3>
+
+    <table class="ui compact celled definition table">
+      <thead>
+      <tr>
+        <th></th>
+        <th>Visitor 1</th>
+        <th>Visitor 2</th>
+        <th>Visitor 3</th>
+        <th>Visitor 4</th>
+        <th>Visitor 5</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td valign="top">7:30</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=0 slot='0730'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=1 slot='0730'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=2 slot='0730'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=3 slot='0730'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=4 slot='0730'}}</td>
+      </tr>
+      <tr>
+        <td valign="top">8:00</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=0 slot='0800'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=1 slot='0800'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=2 slot='0800'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=3 slot='0800'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=4 slot='0800'}}</td>
+      </tr>
+      <tr>
+        <td valign="top">8:30</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=0 slot='0830'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=1 slot='0830'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=2 slot='0830'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=3 slot='0830'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=4 slot='0830'}}</td>
+      </tr>
+      <tr>
+        <td valign="top">9:00</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=0 slot='0900'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=1 slot='0900'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=2 slot='0900'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=3 slot='0900'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=4 slot='0900'}}</td>
+      </tr>
+      <tr>
+        <td valign="top">9:30</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=0 slot='0930'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=1 slot='0930'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=2 slot='0930'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=3 slot='0930'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=4 slot='0930'}}</td>
+      </tr>
+      <tr class="positive">
+        <td valign="top">10:00<br/>(Females only)</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=0 slot='1000'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=1 slot='1000'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=2 slot='1000'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=3 slot='1000'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=4 slot='1000'}}</td>
+      </tr>
+      <tr class="positive">
+        <td valign="top">10:30<br/>(Females only)</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=0 slot='1030'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=1 slot='1030'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=2 slot='1030'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=3 slot='1030'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=4 slot='1030'}}</td>
+      </tr>
+      <tr>
+        <td valign="top">11:00</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=0 slot='1100'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=1 slot='1100'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=2 slot='1100'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=3 slot='1100'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=4 slot='1100'}}</td>
+      </tr>
+      <tr>
+        <td valign="top">11:30</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=0 slot='1130'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=1 slot='1130'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=2 slot='1130'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=3 slot='1130'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=4 slot='1130'}}</td>
+      </tr>
+      <tr>
+        <td valign="top">12:00</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=0 slot='1200'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=1 slot='1200'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=2 slot='1200'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=3 slot='1200'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=4 slot='1200'}}</td>
+      </tr>
+      <tr>
+        <td valign="top">12:30</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=0 slot='1230'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=1 slot='1230'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=2 slot='1230'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=3 slot='1230'}}</td>
+        <td valign="top">{{> Admin_Day_Table_Cell visitNum=4 slot='1230'}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="ui grid container">
+      <div class="left floated left aligned column">
+        <a href="/admin-day/{{yesterday}}">Yesterday</a>
+      </div>
+      <div class="right floated right aligned column">
+        <a href="/admin-day/{{tomorrow}}">Tomorrow</a>
+      </div>
+    </div>
+
+
+  </div>
+</template>

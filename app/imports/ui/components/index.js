@@ -1,3 +1,6 @@
+import './admin-day-table-cell.html';
+import './admin-day-table-cell.js';
+
 import './admin-home-page-table-cell.html';
 import './admin-home-page-table-cell.js';
 
