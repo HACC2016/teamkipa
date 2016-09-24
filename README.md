@@ -1,15 +1,13 @@
-## Kipa: A system to improve OCCC visitation scheduling
+*Scheduling is easy to do if you are willing to do it inefficiently.*
 
-*Scheduling is easy to do if you are willing to do it poorly.*
-
-Doing scheduling poorly means one or both of the following:
+Doing scheduling inefficiently means one or both of the following:
 
   * You invest a lot of time and/or money.
   * You fail frequently.
   
-The [Oahu Community Correctional Center](http://dps.hawaii.gov/about/divisions/corrections/occc/) currently attempts to schedule approximately 350 visits per week through a single phone line and a spreadsheet. This is "poor scheduling" in both senses:  OCCC staff spend over 30 hours a week on the phone with potential visitors, and many visitors fail to visit their loved one due to an inability to get through to OCCC staff, or because they failed to understand and comply with requirements for visitation. This has health and safety implications: visitation is a key part of the rehabilitation process, so improving scheduling might actually improve correctional outcomes. 
+The [Oahu Community Correctional Center](http://dps.hawaii.gov/about/divisions/corrections/occc/) currently attempts to schedule approximately 350 visits per week through a single phone line and a spreadsheet. This is "inefficient scheduling" in both senses:  OCCC staff spend over 30 hours a week on the phone with potential visitors, and many visitors fail to visit their loved one due to an inability to get through to OCCC staff, or because they failed to understand and comply with requirements for visitation. This has health and safety implications: visitation is a key part of the rehabilitation process, so improving scheduling might actually improve correctional outcomes. 
    
-Kipa takes into account the following issues in OCCC scheduling:
+Kipa's design takes into account the following issues in OCCC scheduling:
 
 * OCCC detainees are allowed up to 12 visitors, and must provide staff with those names. 
 * Visitors must submit documentation to OCCC in order to be authorized to request visits. 
@@ -43,43 +41,47 @@ A third goal is to simplify visit cancellation procedures.  If an unforeseen eve
 
 ## Kipa in action
 
-Kipa currently implements a workflow based on about a dozen pages. 
+Kipa currently implements a workflow based on about a dozen pages. A Kipa user is either a "visitor" (someone who wishes to visit a detainee)or an "admin" (an OCCC staff person). 
 
-All users start at the following home page:
+Both visitors and admin start at the following landing page:
 
-![](https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/home.png)
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/landing.png)
 
-Admins and registered users can go to the login page.  New visitors must "Request authorization":
+Admins and registered users can press the button to go to the login page.  New visitors must "Request authorization":
 
-![](https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/register.png)
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/visitor-request-authorization.png)
 
 A new user, once they submit their information, must wait to be authorized by OCCC staff. During that time their home page displays this:
 
-![](https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/authorization-pending.png)
-
-If OCCC staff decline the visitor's request for visitation rights, the home page becomes this:
-
-![](https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/authorization-declined.png)
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/visitor-authorization-pending.png)
 
 If OCCC staff approve the request, the home page enables them to make a visit request:
 
-![](https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/request-visit.png)
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/visitor-reserve-visit.png)
 
 According to OCCC staff, it is OK for such requests to be immediately approved. So, the home page shows the following after selecting a visit time:
 
-![](https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/reserved-visit.png)
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/visitor-visit-pending.png)
 
 The user can cancel and re-reserve visits as they like during the seven day interval.
 
 Once the visit has happened, the home page goes back to enabling them to reserve a new visit.
 
-This workflow involves interaction with OCCC staff for approval processing. Here is the admin page:
+This workflow involves interaction with OCCC staff for approval processing. After logging in, admins view the "Week" page, which shows the schedule of reserved visits for the next seven days:
 
-![](https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/admin-home-page.png)
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/admin-week.png)
 
-In order to approve a request to become an authorized visitor, an admin can click on the name of a user requesting this status to go to this page:
+An admin can click on the name of a user on this page to find out their details, to cancel their visit, or deauthorize them (which means they can no longer make visits):
 
-![](https://github.com/HACC2016/teamkipa/raw/master/doc/mockups/admin-process-authorization.png)
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/admin-manage-visitor.png)
+
+Admins can also view the schedule for a single day, in a printable fashion:
+
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/admin-day.png)
+
+Finally, admins can view the list of visitors who have registered with the system. Once their documentation has been received and processed, the admin can click on the user name to go to the manage visitor page and authorize them to reserve visits:
+
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/admin-authorize.png)
 
 
 ## Installation
