@@ -127,3 +127,15 @@ Note that for this command to work unedited:
 
   * You need to be authorized to deploy to philipmjohnson's galaxy account.  See Philip for details.
   
+## About Kipa development
+
+Kipa was developed as part of the [2016 Hawaii Annual Code Challenge](http://hacc.hawaii.gov/). 
+
+During the hackathon, the Kipa project team included:
+
+  * [McKay Davis](http://devpost.com/McKayDavis)
+  * [Philip Johnson](https://github.com/philipmjohnson)
+  * [Cam Moore](https://github.com/cammoore)
+  * [Mike Peacock](http://devpost.com/hawaiivet2vet)
+  * [Kelemete Seto](https://github.com/oteswang)
+  
