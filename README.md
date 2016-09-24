@@ -47,7 +47,11 @@ Both visitors and admin start at the following landing page:
 
 ![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/landing.png)
 
-Admins and registered users can press the button to go to the login page.  New visitors must "Request authorization":
+Admins and registered users can press the button to go to the login page:  
+
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/login.png)
+
+New visitors must register:
 
 ![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/visitor-request-authorization.png)
 
