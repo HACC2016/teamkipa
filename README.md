@@ -63,6 +63,12 @@ According to OCCC staff, it is OK for such requests to be immediately approved. 
 
 ![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/visitor-visit-pending.png)
 
+And the visitor immediately receives a text message informing them of the reservation:
+
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/visitor-text-message.png)
+
+Text messages are also generated in other situations.
+
 The user can cancel and re-reserve visits as they like during the seven day interval.
 
 Once the visit has happened, the home page goes back to enabling them to reserve a new visit.
