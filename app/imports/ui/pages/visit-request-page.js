@@ -37,7 +37,7 @@ Template.Visit_Request_Page.events({
     const visitor = getVisitorFromID();
     addVisit(day, slot, visitor._id);
     if (visitor.allowtexts) {
-      const message = `From OCCC Visitation, your visit with ${visitor.detaineefirstname} ${visitor.detaineelastname} on ${getVisitTimeString(day, slot)} is approved.`;
+      const message = `${visitor.firstname} ${visitor.lastname}: you have reserved a visit with ${visitor.detaineefirstname} ${visitor.detaineelastname} on ${getVisitTimeString(day, slot)}. OCCC Visit Services.`;
       Meteor.call('sendTextMessage', visitor.phonenumber, message);
     }
   },

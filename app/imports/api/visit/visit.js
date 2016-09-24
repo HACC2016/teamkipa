@@ -21,6 +21,11 @@ export function futureDay(numDays) {
   return moment().add(numDays, 'days').format('YYYY-MM-DD');
 }
 
+/* Increment the day up or down by increment, return the new day value. */
+export function incrementDay(day, increment) {
+  return moment(day, 'YYYY-MM-DD').add(increment, 'days').format('YYYY-MM-DD');
+}
+
 // ///////////  Visits ////////////////////////
 
 export const Visits = new Mongo.Collection('Visits');
@@ -87,3 +92,9 @@ export function getVisitTimeString(day, slot) {
   const time = moment(`${day}-${slot}`, 'YYYY-MM-DD-HHmm');
   return time.format('dddd, MMMM Do, h:mm a');
 }
+
+export function getDayTimeString(day) {
+  const time = moment(day, 'YYYY-MM-DD');
+  return time.format('dddd, MMMM Do');
+}
+

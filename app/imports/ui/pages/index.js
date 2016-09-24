@@ -1,6 +1,9 @@
 import './admin-authorization-requests-page.html';
 import './admin-authorization-requests-page.js';
 
+import './admin-day-page.html';
+import './admin-day-page.js';
+
 import './admin-manage-visitor.html';
 import './admin-manage-visitor.js';
 

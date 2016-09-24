@@ -4,6 +4,7 @@
       <span class="item"><img src="/images/seal.png"></span>
       <span class="item"><h2>Admin</h2></span>
       <a class="{{ isActiveRoute 'Admin_Week_Page'}} item" href="{{ pathFor 'Admin_Week_Page' }}">Week </a>
+      <a class="{{ isActiveRoute 'Admin_Day_Page'}} item" href="{{ pathFor 'Admin_Day_Page' }}/{{getDay}}">Day </a>
       <a class="{{ isActiveRoute 'Admin_Authorization_Requests_Page'}} item"
          href="{{ pathFor 'Admin_Authorization_Requests_Page' }}">Authorize </a>
 

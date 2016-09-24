@@ -71,6 +71,13 @@ FlowRouter.route('/admin-week', {
   },
 });
 
+FlowRouter.route('/admin-day/:day', {
+  name: 'Admin_Day_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Admin_Day_Page' });
+  },
+});
+
 FlowRouter.route('/admin-authorization', {
   name: 'Admin_Authorization_Requests_Page',
   action() {

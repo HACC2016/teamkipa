@@ -73,7 +73,7 @@ Template.Admin_Manage_Visitor_Page.events({
     if (typeof visitor !== 'undefined') {
       Visitors.update({ _id: visitor._id }, { $set: { state: 'authorized' } });
       if (visitor.allowtexts) {
-        const message = `From OCCC Visitation, ${visitor.firstname} you have been approved to visit ${visitor.detaineefirstname} ${visitor.detaineelastname}`;
+        const message = `${visitor.firstname} ${visitor.lastname}: you have been approved to visit ${visitor.detaineefirstname} ${visitor.detaineelastname}. You may now make a reservation at http://kipa.meteorapp.com.`;
         Meteor.call('sendTextMessage', visitor.phonenumber, message);
       }
       FlowRouter.go('/admin-authorization');
