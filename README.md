@@ -115,18 +115,15 @@ meteor
 
 ## Deployment
 
-Kipa is currently deployed to [Galaxy](http://galaxy.meteor.com).  To successfully deploy to Galaxy, invoke the following command from within the app/ directory:
+Kipa can be deployed to [Galaxy](http://galaxy.meteor.com).  To successfully deploy to Galaxy, invoke the following command from within the app/ directory:
 
 ```
 DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy kipa.meteorapp.com --settings ../settings/settings.json --owner philipmjohnson
 ```
 
-Note that for this command to work:
+Note that for this command to work unedited:
 
   * You need to have a settings/settings.json file. See the file settings/sample.settings.json for hints on how to construct this file.
 
   * You need to be authorized to deploy to philipmjohnson's galaxy account.  See Philip for details.
   
-## Live prototype
-
-A prototype is deployed at: [http://kipa.meteorapp.com](http://kipa.meteorapp.com)
