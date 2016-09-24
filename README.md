@@ -65,7 +65,7 @@ According to OCCC staff, it is OK for such requests to be immediately approved. 
 
 And the visitor immediately receives a text message informing them of the reservation:
 
-![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/visitor-text-message.png)
+![](https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/visitor-text-message.jpg)
 
 Text messages are also generated in other situations.
 
