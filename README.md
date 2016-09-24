@@ -93,9 +93,7 @@ Finally, admins can view the list of visitors who have registered with the syste
 
 Click the image below to watch a 1 minute screencast illustrating live updating and text messaging:
 
-[<img src="https://raw.githubusercontent.com/ics-software-engineering/meteor-application-template/master/doc/meteor-application-template-youtube.png" width="600">](https://www.youtube.com/watch?v=COLaTvaCj7U)
-
-
+[<img src="https://github.com/HACC2016/teamkipa/raw/master/doc/screenshots/kipa-youtube.png" width="600">](https://www.youtube.com/watch?v=COLaTvaCj7U)
 
 
 ## Installation
